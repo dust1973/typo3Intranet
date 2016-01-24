@@ -1,0 +1,160 @@
+{namespace se=Tx_WoehrlSeminare_ViewHelpers}
+
+<div class="row">
+    <div class="col-xs-6">
+        <label for="gender">
+            <f:translate key="tx_woehrlseminare_domain_model_subscriber.gender" />
+            <span class="required">*</span> </label>
+        <p><f:form.select property="gender" options="{1: 'Herr', 2: 'Frau'}" optionLabelField="gender" prependOptionLabel="Bitte wählen" class="form-control"  /></p>
+    </div>
+
+    <div class="col-xs-6">
+        <label for="email">
+            <f:translate key="tx_woehrlseminare_domain_model_subscriber.email" />
+            <span class="required">*</span> </label>
+        <p><f:form.textfield type="email" readonly="{readonly}" class="form-control" required="required" property="email" /></p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-6">
+        <label for="vorhname">
+            <f:translate key="tx_woehrlseminare_domain_model_subscriber.vorname" />
+            <span class="required">*</span> </label>
+        <p><f:form.textfield readonly="{readonly}" class="form-control" required="required" property="vorname" /></p>
+    </div>
+    <div class="col-xs-6">
+        <label for="name">
+            <f:translate key="tx_woehrlseminare_domain_model_subscriber.name" />
+            <span class="required">*</span> </label>
+        <p><f:form.textfield readonly="{readonly}" class="form-control" required="required" property="name" /></p>
+    </div>
+
+
+
+</div>
+<div class="row">
+    <div class="col-xs-6">
+        <label for="haus">
+            <f:translate key="tx_woehrlseminare_domain_model_subscriber.haus" /><span class="required">*</span> </label>
+        </label>
+        <p><f:form.textfield  class="form-control" readonly="{readonly}" property="haus" required="required" /></p>
+    </div>
+    <div class="col-xs-6">
+        <label for="position">
+            <f:translate key="tx_woehrlseminare_domain_model_subscriber.position" /><span class="required">*</span> </label>
+        </label>
+        <p><f:form.textfield  class="form-control" readonly="{readonly}" property="position" required="required" /></p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-6">
+        <label for="kostenstelle">
+            <f:translate key="tx_woehrlseminare_domain_model_subscriber.kostenstelle" /><span class="required">*</span> </label>
+        </label>
+
+        <p><f:form.select property="kostenstelle" options="{
+  8-001-6030: 'Nürnberg  8-001-6030',
+  8-002-6030: 'Bamberg  8-002-6030',
+  8-003-6030: 'Erlangen  8-003-6030',
+  8-004-6030: 'Roth  8-004-6030',
+  8-005-6030: 'Würzburg  8-005-6030',
+  8-007-6030: 'München  8-007-6030',
+  8-008-6030: 'Weiden  8-008-6030',
+  8-009-6030: 'Nbg. Langwasser  8-009-6030',
+  8-010-6030: 'Straubing  8-010-6030',
+  8-011-6030: 'Bad Neustadt  8-011-6030',
+  8-012-6030: 'Ansbach  8-012-6030',
+  8-013-6030: 'Fürth  8-013-6030',
+  8-014-6030: 'Ulm  8-014-6030',
+  8-015-6030: 'Landshut  8-015-6030',
+  8-016-6030: 'München-Feringa  8-016-6030',
+  8-017-6030: 'Voelk,Wuerzburg  8-017-6030',
+  8-019-6030: 'Leipzig Nova Eventis  8-019-6030',
+  8-020-6030: 'Neuperlach  8-020-6030',
+  8-021-6030: 'Augsburg  8-021-6030',
+  8-022-6030: 'Passau  8-022-6030',
+  8-023-6030: 'Bamberg  8-023-6030',
+  8-024-6030: 'Hof  8-024-6030',
+  8-025-6030: 'Schweinfurt  8-025-6030',
+  8-026-6030: 'Plauen  8-026-6030',
+  8-027-6030: 'Traunreut  8-027-6030',
+  8-028-6030: 'Neumarkt  8-028-6030',
+  8-030-6030: 'Westpark Ingolstadt  8-030-6030',
+  8-031-6030: 'Dresden  8-031-6030',
+  8-032-6030: 'Zwickau  8-032-6030',
+  8-033-6030: 'Bayreuth  8-033-6030',
+  8-034-6030: 'Magdeburg  8-034-6030',
+  8-035-6030: 'Deggendorf  8-035-6030',
+  8-037-6030: 'Berlin  8-037-6030',
+  8-038-6030: 'Coburg  8-038-6030',
+  8-039-6030: 'Amberg  8-039-6030',
+  8-041-6030: 'Regensburg  8-041-6030',
+  8-043-6030: 'Aschaffenburg 8-043-6030',
+  8-045-6030: 'Grosskunden  8-045-6030',
+  8-078-6030: 'Akademie  8-078-6030',
+  8-060-6030: 'Esprit Store  8-060-6030',
+  8-064-6030: 'Outlet Augsburg  8-064-6030',
+  8-150-8020: 'Bau/ZML  8-150-8020',
+  8-150-4020: 'Marketing/Werbung  8-150-4020',
+  8-150-1020: 'Revision  8-150-1020',
+  8-150-4040: 'Deko/VM  8-150-4040',
+  8-150-5030: 'Controlling  8-150-5030',
+  8-150-5020 : 'Finanz-, Rechnungswesen  8-150-5020',
+  8-150-4030: 'Kommunikation/PR/Markenstrategie  8-150-4030',
+  8-150-1000: 'Vorstand  8-150-1000',
+  8-150-1030: 'Recht  8-150-1030',
+  8-150-3070: 'Buying Support  8-150-3070',
+  8-166-6030: 'Logistik  8-166-6030',
+  8-150-5040: 'IT  8-150-5040',
+  8-150-6020: 'Personal  8-150-6020',
+  8-150-2010: 'Verkaufsleitung  8-150-2010',
+  8-150-3050: 'Einkauf U-eins  8-150-3050',
+  8-150-3010: 'Einkauf HAKA  8-150-3010',
+  8-150-3020: 'Einkauf DOB  8-150-3020',
+  8-150-3040: 'Einkauf Wäesche  8-150-3040',
+  8-150-3030: 'Einkauf Kids  8-150-3030',
+  8-150-3060: 'Einkauf Sport  8-150-3060',
+  8-150-3062: 'Einkaufsleitung  8-150-3062'
+		}"  optionLabelField="kostenstelle" prependOptionLabel="Bitte wählen" class="form-control" /></p>
+
+    </div>
+    <div class="col-xs-6">
+
+
+
+        <f:form.hidden property="editcode" value="<se:format.editCode event='{event}' />"/>
+    </div>
+</div>
+<div class="row">
+
+    <div class="col-xs-6">
+        <label for="customerid">
+            <f:translate key="tx_woehrlseminare_domain_model_subscriber.customerid" /><span class="required">*</span> </label>
+        </label>
+        <p><f:form.textfield type="number"  class="form-control" readonly="{readonly}" property="customerid" required="required" /></p>
+    </div>
+    <div class="col-xs-6">
+        <label for="telephone">
+            <f:translate key="tx_woehrlseminare_domain_model_subscriber.telephone" /><span class="required">*</span> </label>
+        </label>
+        <p><f:form.textfield  class="form-control" readonly="{readonly}" property="telephone" /></p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-6">
+        <label for="emaildesvorgesetzten">
+            <f:translate key="tx_woehrlseminare_domain_model_subscriber.emaildesvorgesetzten" /><span class="required">*</span> </label>
+        </label>
+        <p><f:form.textfield  class="form-control" readonly="{readonly}" property="emaildesvorgesetzten" required="required" /></p>
+    </div>
+    <div class="col-xs-6">
+        <label for="message">
+            <f:translate key="tx_woehrlseminare_domain_model_subscriber.message" />
+        </label>
+        <p><f:form.textfield  class="form-control" readonly="{readonly}" property="message" required="required" /></p>
+    </div>
+
+</div>
+
+
+

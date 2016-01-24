@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-10-09T11:57:21Z" product-name="woehrl_forum">
+		<header/>
+		<body>
+			<trans-unit id="autor.description">
+				<source>autor</source>
+			</trans-unit>
+			<trans-unit id="betreff.description">
+				<source>betreff</source>
+			</trans-unit>
+			<trans-unit id="i_p_adresse.description">
+				<source>iPAdresse</source>
+			</trans-unit>
+			<trans-unit id="zuletztbearbeitet.description">
+				<source>zuletztbearbeitet</source>
+			</trans-unit>
+			<trans-unit id="anzahlder_bearbeitungen.description">
+				<source>anzahlderBearbeitungen</source>
+			</trans-unit>
+			<trans-unit id="nachricht.description">
+				<source>nachricht</source>
+			</trans-unit>
+			<trans-unit id="kategorie.description">
+				<source>kategorie</source>
+			</trans-unit>
+			<trans-unit id="thema.description">
+				<source>thema</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

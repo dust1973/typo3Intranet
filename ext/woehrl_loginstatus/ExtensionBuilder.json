@@ -1,0 +1,106 @@
+{
+    "modules": [
+        {
+            "config": {
+                "position": [
+                    244,
+                    49
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": false,
+                    "_default1_show": true,
+                    "_default2_new_create": false,
+                    "_default3_edit_update": false,
+                    "_default4_delete": false,
+                    "customActions": [
+
+                    ]
+                },
+                "name": "Status",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "Status",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "1167258456712"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "user",
+                            "propertyType": "String",
+                            "uid": "964884181308"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": [
+
+                    ]
+                }
+            }
+        }
+    ],
+    "properties": {
+        "backendModules": [
+
+        ],
+        "description": "",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 6.2\nextbase => 6.2\nfluid => 6.2\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "6.2",
+            "version": "6.0.1"
+        },
+        "extensionKey": "woehrl_loginstatus",
+        "name": "LoginStatus",
+        "originalExtensionKey": "woehrl_loginstatus",
+        "persons": [
+            {
+                "company": "Rudolf  W\u00d6HRL AG",
+                "email": "alexander.fuchs@woehrl.de",
+                "name": "Alexander Fuchs",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "Status=>list,show",
+                    "noncacheableActions": "Status=>list,show",
+                    "switchableActions": ""
+                },
+                "key": "pi1",
+                "name": "W\u00d6HRL Login Status"
+            }
+        ],
+        "vendorName": "Woehrl"
+    },
+    "wires": [
+
+    ],
+    "log": {
+        "last_modified": "2014-07-15 05:27",
+        "extension_builder_version": "6.2.0",
+        "be_user": " (4)"
+    }
+}

@@ -1,0 +1,49 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+<f:debug>{_all}</f:debug>
+<f:section name="main">
+<h1>Listing for Eintrag</h1>
+
+<f:flashMessages renderMode="div" />
+<f:debug>{_all}</f:debug>
+
+
+		<f:widget.paginate objects="{eintrags}" as="paginatedEintrag" configuration="{itemsPerPage: 3, insertAbove: 1, insertBelow: 1, maximumNumberOfLinks: 10}">
+
+		</f:widget.paginate>
+
+<table  class="tx_woehrlforum" >
+	<tr>
+		<th><f:translate key="tx_woehrlforum_domain_model_eintrag.autor" /></th>
+		<th><f:translate key="tx_woehrlforum_domain_model_eintrag.betreff" /></th>
+		<th><f:translate key="tx_woehrlforum_domain_model_eintrag.zuletztbearbeitet" /></th>
+		<th><f:translate key="tx_woehrlforum_domain_model_eintrag.nachricht" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{eintrags}" as="eintrag">
+		<tr>
+			<td><f:link.action action="show" arguments="{eintrag : eintrag}"> {eintrag.autor}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{eintrag : eintrag}"> {eintrag.betreff}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{eintrag : eintrag}"> {eintrag.zuletztbearbeitet -> f:format.date()}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{eintrag : eintrag}"> {eintrag.nachricht}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{eintrag : eintrag}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{eintrag : eintrag}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Eintrag</f:link.action>
+</f:section>

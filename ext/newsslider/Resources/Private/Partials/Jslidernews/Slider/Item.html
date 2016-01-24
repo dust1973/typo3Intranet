@@ -1,0 +1,42 @@
+{namespace newsslider=Tx_Newsslider_ViewHelpers}
+<div class="lof-item">
+	<f:if condition="{newsItem.falMediaPreviews}">
+		<f:then>
+	    <f:render partial="Jslidernews/Image/Image" arguments="{newsItem: newsItem, settings:settings, className:className, view:view}"/>
+		</f:then>
+		<f:else>
+	  <f:render partial="Jslidernews/Image/Dummy" arguments="{newsItem: newsItem, settings:settings, className:className, view:view}"/>
+		</f:else>
+	</f:if>
+	<div class="lof-description">
+    <div class="alpha2" style="float:left; height:100%; width:100%;">&nbsp;</div>
+    <div style="position:relative; padding:10px;">
+      <f:if condition="{settings.jslidernews.showCatInDesc}">
+        <f:if condition="{newsItem.categories}">
+          <span class="category">
+            <f:for each="{newsItem.categories}" as="category" iteration="iter"> / {category.title}<f:if condition="{iter.isLast}"> /</f:if></f:for>
+          </span>
+        </f:if>
+      </f:if>
+      <f:if condition="{settings.jslidernews.showDateInDesc}">
+        <span class="date">
+          <f:if condition="{settings.jslidernews.showCatInDesc}"><f:if condition="{newsItem.categories}">&nbsp;&mdash;&nbsp;</f:if></f:if>
+          <f:format.date format="d.m.Y">{newsItem.datetime}</f:format.date>
+        </span>
+      </f:if>
+	  <h3 class="lof-title"><newsslider:link newsItem="{newsItem}" settings="{settings}">{newsItem.title}</newsslider:link></h3>
+    	<f:if condition="{newsItem.teaser}">
+    		<p class="teaser-text">
+    			<f:then>
+              <f:format.html><f:format.crop append="&nbsp;... <span class='readmore'><newsslider:link newsItem='{newsItem}' settings='{settings}'><f:translate key='readmore'>
+              	</f:translate></newsslider:link></span>" maxCharacters="{settings.cropMaxCharacters}" respectWordBoundaries="true">{newsItem.teaser}</f:format.crop></f:format.html>
+    			</f:then>
+    			<f:else>
+    				<f:format.html><f:format.crop append="&nbsp;... <span class='readmore'><newsslider:link newsItem='{newsItem}' settings='{settings}'><f:translate key='readmore'>
+    					</f:translate></newsslider:link></span>" maxCharacters="{settings.cropMaxCharacters}" respectWordBoundaries="true">{newsItem.bodytext}</f:format.crop></f:format.html>
+    			</f:else>
+    		</p>
+    	</f:if>
+    </div>
+	</div>
+</div>

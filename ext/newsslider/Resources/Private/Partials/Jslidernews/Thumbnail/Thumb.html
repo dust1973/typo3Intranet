@@ -1,0 +1,7 @@
+{namespace newsslider=Tx_Newsslider_ViewHelpers}
+<f:alias map="{mediaElement: newsItem.falMediaPreviews.0}">
+	<f:if condition="{mediaElement.originalResource.type} == 2">
+		<newsslider:image src="{mediaElement.uid}" treatIdAsReference="1" title="{mediaElement.originalResource.title}" alt="Thumbnail"
+			width="{settings.jslidernews.thumbWidth}c" height="{settings.jslidernews.thumbHeight}c" />
+	</f:if>
+</f:alias>

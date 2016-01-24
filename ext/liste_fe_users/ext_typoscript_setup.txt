@@ -1,0 +1,13 @@
+config.tx_extbase {
+	persistence {
+		classes {
+			Woehrl\ListeFeUsers\Domain\Model\User {
+				mapping {
+					tableName = fe_users
+					recordType = Tx_ListeFeUsers_User
+				}
+			}
+		}
+	}
+}
+

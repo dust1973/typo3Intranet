@@ -1,0 +1,18 @@
+config.tx_extbase{
+    persistence{
+        enableAutomaticCacheClearing = 1
+        updateReferenceIndex = 0
+        classes{
+            Woehrl\WoehrlBudgetbuersicht\Domain\Model\Budget {
+                mapping {
+                    tableName = tx_woehrlseminare_domain_model_kostenstelle
+                    #columns{
+                        #haus.mapOnProperty = haus
+                        #kostenstelle.mapOnProperty = kostenstelle
+                    #}
+                }
+            }
+            
+    	}
+    }
+}

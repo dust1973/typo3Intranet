@@ -1,0 +1,23 @@
+{namespace n=Tx_News_ViewHelpers}
+<f:layout name="Nivoslider" />
+<f:section name="nivoslider">
+<div class="newsslider slider-wrapper theme-{settings.nivoslider.theme}" style="max-width:{settings.nivoslider.width}px;">
+  <div class="ribbon"></div>
+  <div id="slider_{contentObjectData.uid}" class="nivoSlider">
+  <f:for each="{news}" as="newsItem" iteration="i">
+	<f:if condition="{newsItem.falMediaPreviews}">
+		<f:then>
+	    <f:render partial="Nivoslider/Image" arguments="{newsItem: newsItem, settings:settings, i:i}"/>
+		</f:then>
+		<f:else>
+	  <f:render partial="Nivoslider/Dummy" arguments="{newsItem: newsItem, settings:settings, i:i}"/>
+		</f:else>
+	</f:if>
+  </f:for>
+  </div>
+</div>
+<f:comment><!-- CAPTION --></f:comment>
+<f:for each="{news}" as="newsItem" iteration="i">
+  <f:render partial="Nivoslider/Caption" arguments="{newsItem:newsItem, settings:settings, i:i}"/>
+</f:for>
+</f:section>

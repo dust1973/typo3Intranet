@@ -1,0 +1,22 @@
+{namespace newsslider=Tx_Newsslider_ViewHelpers}
+<f:if condition="{settings.nivoslider.imageLink}">
+  <f:then>
+	<newsslider:link newsItem="{newsItem}" settings="{settings}">
+		<f:alias map="{mediaElement: newsItem.falMediaPreviews.0}">
+			<f:if condition="{mediaElement.originalResource.type} == 2">
+				<newsslider:image src="{mediaElement.uid}" treatIdAsReference="1" title="#htmlcaption{i.cycle}" alt="{mediaElement.originalResource.alternative}"
+					width="{settings.nivoslider.width}c" height="{settings.nivoslider.height}c" />
+			</f:if>
+		</f:alias>
+	</newsslider:link>
+  </f:then>
+  <f:else>
+		<f:alias map="{mediaElement: newsItem.falMediaPreviews.0}">
+			<f:if condition="{mediaElement.originalResource.type} == 2">
+				<newsslider:image src="{mediaElement.uid}" treatIdAsReference="1" title="#htmlcaption{i.cycle}" alt="{mediaElement.originalResource.alternative}"
+					width="{settings.nivoslider.width}c" height="{settings.nivoslider.height}c" />
+			</f:if>
+		</f:alias>
+  </f:else>
+</f:if>
+

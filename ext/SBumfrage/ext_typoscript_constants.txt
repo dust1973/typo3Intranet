@@ -1,0 +1,16 @@
+# Constants
+plugin.tx_SBumfrage_pi1 {
+  # ID der darzustellenden Umfrage
+  questid =  0
+  # mit Cookies arbeiten (Mehrfachabstimmung yes|no)
+  cookie = yes
+  # Umleitung auf eine Ergebnisseite
+  result = 
+  # HTML-Sniplets
+  tplpoll = EXT:SBumfrage/pi1/poll.tmpl
+  tplresult = EXT:SBumfrage/pi1/result.tmpl
+  # Parameter
+  parameter = keylist1,keylist2,keylist3
+  # Limit offset
+  limitoffset = 0  
+}

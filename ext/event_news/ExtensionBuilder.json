@@ -1,0 +1,45 @@
+{
+    "modules": [
+
+    ],
+    "properties": {
+        "backendModules": [
+
+        ],
+        "description": "",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 6.2\ntx_news=>6.2\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "6.2",
+            "version": "2.1.0"
+        },
+        "extensionKey": "event_news",
+        "name": "Eventcalender",
+        "originalExtensionKey": "",
+        "persons": [
+            {
+                "company": "Rudolf W\u00d6HRL AG",
+                "email": "alexander.fuchs@woehrl.de",
+                "name": "Alex Fuchs",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [
+
+        ],
+        "vendorName": "Woehrl"
+    },
+    "wires": [
+
+    ],
+    "log": {
+        "last_modified": "2014-07-21 02:07",
+        "extension_builder_version": "6.2.0",
+        "be_user": " (4)"
+    }
+}

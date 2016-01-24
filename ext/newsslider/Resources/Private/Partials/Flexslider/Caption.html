@@ -1,0 +1,18 @@
+{namespace newsslider=Tx_Newsslider_ViewHelpers}
+<p class="flex-caption">
+<span class="caption-title"><newsslider:link newsItem="{newsItem}" settings="{settings}">{newsItem.title}</newsslider:link></span>
+<f:if condition="{newsItem.teaser}">
+	<f:then>
+		<span class="hidden-xs">
+		<f:format.crop append="&nbsp;... <span class='readmore'><newsslider:link newsItem='{newsItem}' settings='{settings}'><f:translate key='readmore'>
+			</f:translate></newsslider:link></span>" maxCharacters="{settings.cropMaxCharacters}" respectWordBoundaries="true">{newsItem.teaser}</f:format.crop>
+		</span>
+	</f:then>
+	<f:else>
+		<span class="hidden-xs">
+		<f:format.crop append="&nbsp;... <span class='readmore'><newsslider:link newsItem='{newsItem}' settings='{settings}'><f:translate key='readmore'>
+			</f:translate></newsslider:link></span>" maxCharacters="{settings.cropMaxCharacters}" respectWordBoundaries="true">{newsItem.bodytext}</f:format.crop>
+		</span>
+	</f:else>
+</f:if>
+</p>

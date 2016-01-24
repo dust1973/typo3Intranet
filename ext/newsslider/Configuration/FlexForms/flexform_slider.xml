@@ -1,0 +1,1025 @@
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+
+	<sheets>
+		<!--
+			################################
+			  SHEET General Settings
+			################################
+		-->
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_tab.settings</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<!-- order -->
+					<settings.orderBy>
+						<TCEforms>
+							<label>LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_general.orderBy</label>
+							<config>
+								<type>select</type>
+								<itemsProcFunc>Tx_News_Hooks_ItemsProcFunc->user_orderBy</itemsProcFunc>
+								<items>
+									<numIndex index="0" type="array">
+										<numIndex index="0"></numIndex>
+										<numIndex index="1"></numIndex>
+									</numIndex>
+									<numIndex index="1">
+										<numIndex index="0">LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_general.orderBy.tstamp</numIndex>
+										<numIndex index="1">tstamp</numIndex>
+									</numIndex>
+									<numIndex index="2">
+										<numIndex index="0">LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_general.orderBy.datetime</numIndex>
+										<numIndex index="1">datetime</numIndex>
+									</numIndex>
+									<numIndex index="3">
+										<numIndex index="0">LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_general.orderBy.crdate</numIndex>
+										<numIndex index="1">crdate</numIndex>
+									</numIndex>
+									<numIndex index="4">
+										<numIndex index="0">LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_general.orderBy.title</numIndex>
+										<numIndex index="1">title</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.orderBy>
+
+					<!-- order direction  -->
+					<settings.orderDirection>
+						<TCEforms>
+							<label>LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_general.orderDirection</label>
+							<config>
+								<type>select</type>
+								<items>
+									<numIndex index="0" type="array">
+										<numIndex index="0"></numIndex>
+										<numIndex index="1"></numIndex>
+									</numIndex>
+									<numIndex index="1">
+										<numIndex index="0">LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_general.orderDirection.asc</numIndex>
+										<numIndex index="1">asc</numIndex>
+									</numIndex>
+									<numIndex index="2">
+										<numIndex index="0">LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_general.orderDirection.desc</numIndex>
+										<numIndex index="1">desc</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.orderDirection>
+
+					<!-- Category -->
+					<settings.categories>
+						<TCEforms>
+							<label>LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_general.categories</label>
+							<config>
+								<type>select</type>
+								<renderMode>tree</renderMode>
+								<treeConfig>
+									<parentField>parent</parentField>
+									<appearance>
+										<maxLevels>99</maxLevels>
+										<expandAll>TRUE</expandAll>
+										<showHeader>TRUE</showHeader>
+									</appearance>
+								</treeConfig>
+								<foreign_table>sys_category</foreign_table>
+								<foreign_table_where> AND (sys_category.sys_language_uid = 0 OR sys_category.l10n_parent = 0) ORDER BY sys_category.sorting</foreign_table_where>
+								<size>10</size>
+								<autoSizeMax>20</autoSizeMax>
+								<minitems>0</minitems>
+								<maxitems>99</maxitems>
+							</config>
+						</TCEforms>
+					</settings.categories>
+
+					<!-- Category Mode -->
+					<settings.categoryConjunction>
+						<TCEforms>
+							<label>LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_general.categoryConjunction</label>
+							<config>
+								<type>select</type>
+								<items>
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_general.categoryConjunction.all</numIndex>
+										<numIndex index="1"></numIndex>
+									</numIndex>
+									<numIndex index="1">
+										<numIndex index="0">LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_general.categoryConjunction.or</numIndex>
+										<numIndex index="1">or</numIndex>
+									</numIndex>
+									<numIndex index="2">
+										<numIndex index="0">LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_general.categoryConjunction.and</numIndex>
+										<numIndex index="1">and</numIndex>
+									</numIndex>
+									<numIndex index="3">
+										<numIndex index="0">LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_general.categoryConjunction.notor</numIndex>
+										<numIndex index="1">notor</numIndex>
+									</numIndex>
+									<numIndex index="4">
+										<numIndex index="0">LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_general.categoryConjunction.notand</numIndex>
+										<numIndex index="1">notand</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.categoryConjunction>
+
+					<!-- Include sub categories -->
+					<settings.includeSubCategories>
+						<TCEforms>
+							<label>LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_general.includeSubCategories</label>
+							<config>
+								<type>check</type>
+							</config>
+						</TCEforms>
+					</settings.includeSubCategories>
+
+					<!-- Archive -->
+					<settings.archiveRestriction>
+						<TCEforms>
+							<label>LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_general.archiveRestriction</label>
+							<config>
+								<type>select</type>
+								<items>
+									<numIndex index="0" type="array">
+										<numIndex index="0"></numIndex>
+										<numIndex index="1"></numIndex>
+									</numIndex>
+									<numIndex index="1">
+										<numIndex index="0">LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_general.archiveRestriction.active</numIndex>
+										<numIndex index="1">active</numIndex>
+									</numIndex>
+									<numIndex index="2">
+										<numIndex index="0">LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_general.archiveRestriction.archived</numIndex>
+										<numIndex index="1">archived</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.archiveRestriction>
+
+					<!-- Time limit Low -->
+					<settings.timeRestriction>
+						<TCEforms>
+						<label>LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_general.timeRestriction</label>
+							<config>
+								<checkbox>1</checkbox>
+								<default></default>
+								<type>input</type>
+								<size>15</size>
+							</config>
+						</TCEforms>
+					</settings.timeRestriction>
+
+					<!-- Time limit High -->
+					<settings.timeRestrictionHigh>
+						<TCEforms>
+						<label>LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_general.timeRestrictionHigh</label>
+							<config>
+								<checkbox>1</checkbox>
+								<default></default>
+								<type>input</type>
+								<size>15</size>
+							</config>
+						</TCEforms>
+					</settings.timeRestrictionHigh>
+
+					<!-- Top News -->
+					<settings.topNewsRestriction>
+						<TCEforms>
+							<label>LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_general.topNewsRestriction</label>
+							<config>
+								<type>select</type>
+								<items>
+									<numIndex index="0" type="array">
+										<numIndex index="0"></numIndex>
+										<numIndex index="1"></numIndex>
+									</numIndex>
+									<numIndex index="1">
+										<numIndex index="0">LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_general.topNewsRestriction.1</numIndex>
+										<numIndex index="1">1</numIndex>
+									</numIndex>
+									<numIndex index="2">
+										<numIndex index="0">LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_general.topNewsRestriction.2</numIndex>
+										<numIndex index="1">2</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.topNewsRestriction>
+
+					<!-- startingpoint -->
+					<settings.startingpoint>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:lang/locallang_general.xml:LGL.startingpoint</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>3</size>
+								<maxitems>50</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+								<wizards>
+									<suggest>
+										<type>suggest</type>
+									</suggest>
+								</wizards>
+							</config>
+						</TCEforms>
+					</settings.startingpoint>
+
+					<!-- recursive -->
+					<settings.recursive>
+						<TCEforms>
+							<exclude>1</exclude>
+							<label>LLL:EXT:lang/locallang_general.xml:LGL.recursive</label>
+							<config>
+								<type>select</type>
+								<items type="array">
+									<numIndex index="1" type="array">
+										<numIndex index="0"></numIndex>
+										<numIndex index="1">0</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">LLL:EXT:cms/locallang_ttc.xml:recursive.I.1</numIndex>
+										<numIndex index="1">1</numIndex>
+									</numIndex>
+									<numIndex index="3" type="array">
+										<numIndex index="0">LLL:EXT:cms/locallang_ttc.xml:recursive.I.2</numIndex>
+										<numIndex index="1">2</numIndex>
+									</numIndex>
+									<numIndex index="4" type="array">
+										<numIndex index="0">LLL:EXT:cms/locallang_ttc.xml:recursive.I.3</numIndex>
+										<numIndex index="1">3</numIndex>
+									</numIndex>
+									<numIndex index="5" type="array">
+										<numIndex index="0">LLL:EXT:cms/locallang_ttc.xml:recursive.I.4</numIndex>
+										<numIndex index="1">4</numIndex>
+									</numIndex>
+									<numIndex index="6" type="array">
+										<numIndex index="0">LLL:EXT:cms/locallang_ttc.xml:recursive.I.5</numIndex>
+										<numIndex index="1">250</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</settings.recursive>
+
+				</el>
+			</ROOT>
+		</sDEF>
+
+<!--
+			################################
+			  SHEET Additional
+			################################
+		-->
+		<additional>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_tab.additional</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+
+
+					<!-- PID Single Page -->
+					<settings.detailPid>
+						<TCEforms>
+							<label>LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_additional.detailPid</label>
+							<config>
+								<type>group</type>
+								<internal_type>db</internal_type>
+								<allowed>pages</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+								<wizards>
+									<suggest>
+										<type>suggest</type>
+									</suggest>
+								</wizards>
+							</config>
+						</TCEforms>
+					</settings.detailPid>
+
+
+					<!-- Limit Start -->
+					<settings.limit>
+						<TCEforms>
+							<label>LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_additional.limit</label>
+							<config>
+								<type>input</type>
+								<size>5</size>
+								<eval>num</eval>
+							</config>
+						</TCEforms>
+					</settings.limit>
+
+
+					<!-- topNewsFirst -->
+					<settings.topNewsFirst>
+						<TCEforms>
+							<label>LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_additional.topNewsFirst</label>
+							<config>
+								<type>check</type>
+							</config>
+						</TCEforms>
+					</settings.topNewsFirst>
+
+					<!-- only not displayed news -->
+					<settings.excludeAlreadyDisplayedNews>
+						<TCEforms>
+							<label>LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_additional.excludeAlreadyDisplayedNews</label>
+							<config>
+								<type>check</type>
+							</config>
+						</TCEforms>
+					</settings.excludeAlreadyDisplayedNews>
+
+					<!-- crop length Teaser -->
+					<settings.cropMaxCharacters>
+						<TCEforms>
+							<label>LLL:EXT:news/Resources/Private/Language/locallang_be.xml:flexforms_template.cropMaxCharacters</label>
+							<config>
+								<type>input</type>
+								<size>5</size>
+							</config>
+						</TCEforms>
+					</settings.cropMaxCharacters>
+
+				</el>
+			</ROOT>
+		</additional>
+
+<!--
+			################################
+			  SHEET Slider
+			################################
+		-->
+
+
+    <slider>
+     <ROOT>
+        <TCEforms>
+           <sheetTitle>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.sheetTitle</sheetTitle>
+        </TCEforms>
+        <type>array</type>
+        <el>
+
+          <switchableControllerActions>
+            <TCEforms>
+              <label>jQuery - Plugin</label>
+			  <onChange>reload</onChange>
+              <config>
+                <type>select</type>
+                <items>
+                   <numIndex index="0">
+                     <numIndex index="0">JSliderNews</numIndex>
+                     <numIndex index="1">Slider->jslidernews</numIndex>
+                   </numIndex>
+                   <numIndex index="1">
+                     <numIndex index="0">Flexslider (responsive)</numIndex>
+                     <numIndex index="1">Slider->flexslider</numIndex>
+                   </numIndex>
+                   <numIndex index="2">
+                     <numIndex index="0">Nivoslider (responsive)</numIndex>
+                     <numIndex index="1">Slider->nivoslider</numIndex>
+                   </numIndex>
+
+                 </items>
+              </config>
+            </TCEforms>
+          </switchableControllerActions>
+
+<!--
+			  jSliderNews
+		-->
+  		    <!-- Slider Style -->
+  				<settings.jslidernews.style>
+  					<TCEforms>
+  					<displayCond>FIELD:switchableControllerActions:=:,Slider->jslidernews</displayCond>
+  						<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.style</label>
+  						<config>
+  							<type>select</type>
+  							<size>1</size>
+  							<maxitems>1</maxitems>
+  							<items type="array">
+  								<numIndex index="0" type="array">
+  									<numIndex index="0">LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.style.I.0</numIndex>
+  									<numIndex index="1">1</numIndex>
+  								</numIndex>
+  								<numIndex index="1" type="array">
+  									<numIndex index="0">LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.style.I.1</numIndex>
+  									<numIndex index="1">2</numIndex>
+  								</numIndex>
+  								<numIndex index="2" type="array">
+  									<numIndex index="0">LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.style.I.2</numIndex>
+  									<numIndex index="1">3</numIndex>
+  								</numIndex>
+  								<numIndex index="3" type="array">
+  									<numIndex index="0">LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.style.I.3</numIndex>
+  									<numIndex index="1">4</numIndex>
+  								</numIndex>
+  								<numIndex index="4" type="array">
+  									<numIndex index="0">LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.style.I.4</numIndex>
+  									<numIndex index="1">5</numIndex>
+  								</numIndex>
+  							</items>
+  						</config>
+  					</TCEforms>
+  				</settings.jslidernews.style>
+
+  		    <!-- Slider Width -->
+      		<settings.jslidernews.width>
+      				<TCEforms>
+  					  <displayCond>FIELD:switchableControllerActions:=:,Slider->jslidernews</displayCond>
+      				<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.width</label>
+      				<config>
+      					<type>input</type>
+      					<size>6</size>
+  							<default>700</default>
+                <eval>int,nospace</eval>
+      					<checkbox></checkbox>
+      				</config>
+      				</TCEforms>
+      		</settings.jslidernews.width>
+
+  		    <!-- Slider Height -->
+      		<settings.jslidernews.height>
+      				<TCEforms>
+  					  <displayCond>FIELD:switchableControllerActions:=:,Slider->jslidernews</displayCond>
+      				<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.height</label>
+      				<config>
+      					<type>input</type>
+      					<size>6</size>
+  							<default>300</default>
+                <eval>int,nospace</eval>
+      					<checkbox></checkbox>
+      				</config>
+      				</TCEforms>
+      		</settings.jslidernews.height>
+
+  		    <!-- Slider Auto -->
+  				<settings.jslidernews.auto>
+  					<TCEforms>
+  					  <displayCond>FIELD:switchableControllerActions:=:,Slider->jslidernews</displayCond>
+  						<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.auto</label>
+  						<config>
+  							<type>check</type>
+  							<default>1</default>
+  						</config>
+  					</TCEforms>
+  				</settings.jslidernews.auto>
+
+  		    <!-- Slider Pause -->
+  				<settings.jslidernews.pause>
+						<TCEforms>
+  					  <displayCond>FIELD:switchableControllerActions:=:,Slider->jslidernews</displayCond>
+							<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.pause</label>
+							<config>
+								<type>select</type>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.pause.I.0</numIndex>
+										<numIndex index="1">0</numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.pause.I.1</numIndex>
+										<numIndex index="1">1</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.pause.I.2</numIndex>
+										<numIndex index="1">2</numIndex>
+									</numIndex>
+ 								</items>
+							</config>
+						</TCEforms>
+  				</settings.jslidernews.pause>
+
+  		    <!-- Slider Progressbar -->
+  				<settings.jslidernews.progressbar>
+  					<TCEforms>
+  					  <displayCond>FIELD:switchableControllerActions:=:,Slider->jslidernews</displayCond>
+  						<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.progressbar</label>
+  						<config>
+  							<type>check</type>
+  							<default>0</default>
+  						</config>
+  					</TCEforms>
+  				</settings.jslidernews.progressbar>
+
+  		    <!-- Slider Pagination -->
+  				<settings.jslidernews.pagination>
+  					<TCEforms>
+  					  <displayCond>FIELD:switchableControllerActions:=:,Slider->jslidernews</displayCond>
+  						<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.pagination</label>
+  						<config>
+  							<type>check</type>
+  							<default>0</default>
+  						</config>
+  					</TCEforms>
+  				</settings.jslidernews.pagination>
+
+  		    <!-- Slider Image Link -->
+  				<settings.jslidernews.imageLink>
+  					<TCEforms>
+  					  <displayCond>FIELD:switchableControllerActions:=:,Slider->jslidernews</displayCond>
+  						<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.imageLink</label>
+  						<config>
+  							<type>check</type>
+  							<default>0</default>
+  						</config>
+  					</TCEforms>
+  				</settings.jslidernews.imageLink>
+
+  		    <!-- Slider Css File -->
+					<settings.jslidernews.cssFile>
+						<TCEforms>
+							<exclude>1</exclude>
+  					  <displayCond>FIELD:switchableControllerActions:=:,Slider->jslidernews</displayCond>
+							<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.css</label>
+							<config>
+								<type>group</type>
+								<internal_type>file</internal_type>
+								<allowed>css</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</settings.jslidernews.cssFile>
+
+<!--
+			  Flexslider
+		-->
+  		    <!-- Slider Style -->
+			<settings.flexslider.style>
+				<TCEforms>
+				<displayCond>FIELD:switchableControllerActions:=:,Slider->flexslider</displayCond>
+					<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.style</label>
+					<onChange>reload</onChange>
+					<config>
+						<type>select</type>
+						<size>1</size>
+						<maxitems>1</maxitems>
+						<items type="array">
+							<numIndex index="0" type="array">
+								<numIndex index="0">LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.style.II.0</numIndex>
+								<numIndex index="1">1</numIndex>
+							</numIndex>
+							<numIndex index="1" type="array">
+								<numIndex index="0">LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.style.II.1</numIndex>
+								<numIndex index="1">2</numIndex>
+							</numIndex>
+							<numIndex index="2" type="array">
+								<numIndex index="0">LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.style.II.2</numIndex>
+								<numIndex index="1">3</numIndex>
+							</numIndex>
+							<numIndex index="3" type="array">
+								<numIndex index="0">LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.style.II.3</numIndex>
+								<numIndex index="1">4</numIndex>
+							</numIndex>
+							<numIndex index="4" type="array">
+								<numIndex index="0">LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.style.II.4</numIndex>
+								<numIndex index="1">5</numIndex>
+							</numIndex>
+						</items>
+					</config>
+				</TCEforms>
+			</settings.flexslider.style>
+
+
+  		    <!-- Slider Width -->
+      		<settings.flexslider.width>
+      				<TCEforms>
+  					  <displayCond>FIELD:switchableControllerActions:=:Slider->flexslider</displayCond>
+      				<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.maxWidth</label>
+      				<config>
+      					<type>input</type>
+      					<size>6</size>
+  							<default>700</default>
+                <eval>int,nospace</eval>
+      					<checkbox></checkbox>
+      				</config>
+      				</TCEforms>
+      		</settings.flexslider.width>
+
+  		    <!-- Slider Height -->
+      		<settings.flexslider.height>
+      			<TCEforms>
+		        <displayCond>
+		            <AND>
+		                <numIndex>FIELD:switchableControllerActions:=:Slider->flexslider</numIndex>
+		                <AND>
+		                <numIndex>FIELD:settings.flexslider.style:=:1,2,3</numIndex>
+		                </AND>
+		            </AND>
+		        </displayCond>
+  				<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.maxHeight</label>
+  				<config>
+  					<type>input</type>
+  					<size>6</size>
+						<default>300</default>
+						<eval>int,nospace</eval>
+  					<checkbox></checkbox>
+  				</config>
+  				</TCEforms>
+      		</settings.flexslider.height>
+
+
+	  		<!-- Thumbnail Height -->
+			<settings.flexslider.thumbheight>
+				<TCEforms>
+		        <displayCond>
+		            <AND>
+		                <numIndex>FIELD:switchableControllerActions:=:Slider->flexslider</numIndex>
+		                <AND>
+		                <numIndex>FIELD:settings.flexslider.style:=:4,5</numIndex>
+		                </AND>
+		            </AND>
+		        </displayCond>
+				<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.thumbHeight</label>
+				<config>
+					<type>input</type>
+					<size>6</size>
+					<default>300</default>
+					<eval>int,nospace</eval>
+					<checkbox></checkbox>
+				</config>
+				</TCEforms>
+			</settings.flexslider.thumbheight>
+
+
+  		    <!-- Slider Animation -->
+			<settings.flexslider.animation>
+				<TCEforms>
+		        <displayCond>
+		            <AND>
+		                <numIndex>FIELD:switchableControllerActions:=:Slider->flexslider</numIndex>
+		                <AND>
+		                <numIndex>FIELD:settings.flexslider.style:=:1,2,3</numIndex>
+		                </AND>
+		            </AND>
+		        </displayCond>
+				<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.animationType</label>
+					<config>
+						<type>select</type>
+						<size>1</size>
+						<maxitems>1</maxitems>
+						<items type="array">
+							<numIndex index="0" type="array">
+								<numIndex index="0">Fade</numIndex>
+								<numIndex index="1">fade</numIndex>
+							</numIndex>
+							<numIndex index="1" type="array">
+								<numIndex index="0">Slide</numIndex>
+								<numIndex index="1">slide</numIndex>
+							</numIndex>
+						</items>
+					</config>
+				</TCEforms>
+			</settings.flexslider.animation>
+
+  		    <!-- Slider Thumbnumber -->
+			<settings.flexslider.thumbnumber>
+				<TCEforms>
+		        <displayCond>
+		            <AND>
+		                <numIndex>FIELD:switchableControllerActions:=:Slider->flexslider</numIndex>
+		                <AND>
+		                <numIndex>FIELD:settings.flexslider.style:=:3,4</numIndex>
+		                </AND>
+		            </AND>
+		        </displayCond>
+				<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.thumbNumber</label>
+				<config>
+					<type>input</type>
+					<size>2</size>
+						<default>4</default>
+						<eval>int,nospace</eval>
+					<checkbox></checkbox>
+				</config>
+				</TCEforms>
+			</settings.flexslider.thumbnumber>
+
+  		    <!-- Slider minItems -->
+			<settings.flexslider.minItems>
+				<TCEforms>
+		        <displayCond>
+		            <AND>
+		                <numIndex>FIELD:switchableControllerActions:=:Slider->flexslider</numIndex>
+		                <AND>
+		                <numIndex>FIELD:settings.flexslider.style:=:5</numIndex>
+		                </AND>
+		            </AND>
+		        </displayCond>
+				<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.minItems</label>
+				<config>
+					<type>input</type>
+					<size>2</size>
+						<default>2</default>
+						<eval>int,nospace</eval>
+					<checkbox></checkbox>
+				</config>
+				</TCEforms>
+			</settings.flexslider.minItems>
+
+  		    <!-- Slider maxItems -->
+			<settings.flexslider.maxItems>
+				<TCEforms>
+		        <displayCond>
+		            <AND>
+		                <numIndex>FIELD:switchableControllerActions:=:Slider->flexslider</numIndex>
+		                <AND>
+		                <numIndex>FIELD:settings.flexslider.style:=:5</numIndex>
+		                </AND>
+		            </AND>
+		        </displayCond>
+				<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.maxItems</label>
+				<config>
+					<type>input</type>
+					<size>2</size>
+						<default>4</default>
+						<eval>int,nospace</eval>
+					<checkbox></checkbox>
+				</config>
+				</TCEforms>
+			</settings.flexslider.maxItems>
+
+
+
+  		    <!-- Slider Auto -->
+  				<settings.flexslider.slideshow>
+  					<TCEforms>
+  					  	<displayCond>FIELD:switchableControllerActions:=:Slider->flexslider</displayCond>
+				        <displayCond>
+				            <AND>
+				                <numIndex>FIELD:switchableControllerActions:=:Slider->flexslider</numIndex>
+				                <AND>
+				                <numIndex>FIELD:settings.flexslider.style:=:1,2,4,5</numIndex>
+				                </AND>
+				            </AND>
+				        </displayCond>
+  						<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.auto</label>
+  						<config>
+  							<type>check</type>
+  							<default>1</default>
+  						</config>
+  					</TCEforms>
+  				</settings.flexslider.slideshow>
+
+  		    <!-- Slider directionNav  -->
+  				<settings.flexslider.directionNav>
+  					<TCEforms>
+  					  <displayCond>FIELD:switchableControllerActions:=:Slider->flexslider</displayCond>
+  						<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.directionNav</label>
+  						<config>
+  							<type>check</type>
+  							<default>1</default>
+  						</config>
+  					</TCEforms>
+  				</settings.flexslider.directionNav>
+
+  		    <!-- Slider Pagination -->
+  				<settings.flexslider.controlNav>
+  					<TCEforms>
+				        <displayCond>
+				            <AND>
+				                <numIndex>FIELD:switchableControllerActions:=:Slider->flexslider</numIndex>
+				                <AND>
+				                <numIndex>FIELD:settings.flexslider.style:=:1,4,5</numIndex>
+				                </AND>
+				            </AND>
+				        </displayCond>
+  						<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.controlNav</label>
+  						<config>
+  							<type>check</type>
+  							<default>1</default>
+  						</config>
+  					</TCEforms>
+  				</settings.flexslider.controlNav>
+
+  		    <!-- Slider Image Link -->
+  				<settings.flexslider.imageLink>
+  					<TCEforms>
+  					  <displayCond>FIELD:switchableControllerActions:=:Slider->flexslider</displayCond>
+  						<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.imageLink</label>
+  						<config>
+  							<type>check</type>
+  							<default>0</default>
+  						</config>
+  					</TCEforms>
+  				</settings.flexslider.imageLink>
+
+  		    <!-- Slider Video allowed
+  				<settings.flexslider.allowVideo>
+  					<TCEforms>
+  					  <displayCond>FIELD:switchableControllerActions:=:Slider->flexslider</displayCond>
+  						<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.allowVideo</label>
+  						<config>
+  							<type>check</type>
+  							<default>0</default>
+  						</config>
+  					</TCEforms>
+  				</settings.flexslider.allowVideo>
+-->
+  		    <!-- Slider Css File -->
+					<settings.flexslider.cssFile>
+						<TCEforms>
+  					  <displayCond>FIELD:switchableControllerActions:=:Slider->flexslider</displayCond>
+							<exclude>1</exclude>
+							<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.css</label>
+							<config>
+								<type>group</type>
+								<internal_type>file</internal_type>
+								<allowed>css</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</settings.flexslider.cssFile>
+
+
+<!--
+			  Nivoslider
+		-->
+  		    <!-- Nivoslider Theme -->
+  				<settings.nivoslider.theme>
+						<TCEforms>
+  					  <displayCond>FIELD:switchableControllerActions:=:Slider->nivoslider</displayCond>
+							<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.theme</label>
+							<config>
+								<type>select</type>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">default</numIndex>
+										<numIndex index="1">default</numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">light</numIndex>
+										<numIndex index="1">light</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">dark</numIndex>
+										<numIndex index="1">dark</numIndex>
+									</numIndex>
+									<numIndex index="3" type="array">
+										<numIndex index="0">bar</numIndex>
+										<numIndex index="1">bar</numIndex>
+									</numIndex>
+ 								</items>
+							</config>
+						</TCEforms>
+  				</settings.nivoslider.theme>
+
+  		    <!-- Nivoslider Theme -->
+  				<settings.nivoslider.effect>
+						<TCEforms>
+  					  <displayCond>FIELD:switchableControllerActions:=:Slider->nivoslider</displayCond>
+							<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.effect</label>
+							<config>
+								<type>select</type>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">random</numIndex>
+										<numIndex index="1">random</numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">fold</numIndex>
+										<numIndex index="1">fold</numIndex>
+									</numIndex>
+									<numIndex index="2" type="array">
+										<numIndex index="0">fade</numIndex>
+										<numIndex index="1">fade</numIndex>
+									</numIndex>
+									<numIndex index="3" type="array">
+										<numIndex index="0">sliceDown</numIndex>
+										<numIndex index="1">sliceDown</numIndex>
+									</numIndex>
+ 								</items>
+							</config>
+						</TCEforms>
+  				</settings.nivoslider.effect>
+
+  		    <!-- Nivoslider Width -->
+      		<settings.nivoslider.width>
+      				<TCEforms>
+  					  <displayCond>FIELD:switchableControllerActions:=:Slider->nivoslider</displayCond>
+      				<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.maxWidth</label>
+      				<config>
+      					<type>input</type>
+      					<size>6</size>
+  							<default>700</default>
+                <eval>int,nospace</eval>
+      					<checkbox></checkbox>
+      				</config>
+      				</TCEforms>
+      		</settings.nivoslider.width>
+
+  		    <!-- Nivoslider Height -->
+      		<settings.nivoslider.height>
+      				<TCEforms>
+  					  <displayCond>FIELD:switchableControllerActions:=:Slider->nivoslider</displayCond>
+      				<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.maxHeight</label>
+      				<config>
+      					<type>input</type>
+      					<size>6</size>
+  							<default>300</default>
+                <eval>int,nospace</eval>
+      					<checkbox></checkbox>
+      				</config>
+      				</TCEforms>
+      		</settings.nivoslider.height>
+
+  		    <!-- Nivoslider manualAdvance -->
+  				<settings.nivoslider.manualAdvance>
+  					<TCEforms>
+  					  <displayCond>FIELD:switchableControllerActions:=:Slider->nivoslider</displayCond>
+  						<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.auto</label>
+  						<config>
+  							<type>check</type>
+  							<default>0</default>
+  						</config>
+  					</TCEforms>
+  				</settings.nivoslider.manualAdvance>
+
+  		    <!-- Nivoslider directionNav  -->
+  				<settings.nivoslider.directionNav>
+  					<TCEforms>
+  					  <displayCond>FIELD:switchableControllerActions:=:Slider->nivoslider</displayCond>
+  						<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.directionNav</label>
+  						<config>
+  							<type>check</type>
+  							<default>1</default>
+  						</config>
+  					</TCEforms>
+  				</settings.nivoslider.directionNav>
+
+  		    <!-- Nivoslider controlNav -->
+  				<settings.nivoslider.controlNav>
+  					<TCEforms>
+  					  <displayCond>FIELD:switchableControllerActions:=:Slider->nivoslider</displayCond>
+  						<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.controlNav</label>
+  						<config>
+  							<type>check</type>
+  							<default>1</default>
+  						</config>
+  					</TCEforms>
+  				</settings.nivoslider.controlNav>
+
+  		    <!-- Nivoslider Image Link -->
+  				<settings.nivoslider.imageLink>
+  					<TCEforms>
+  					  <displayCond>FIELD:switchableControllerActions:=:Slider->nivoslider</displayCond>
+  						<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.imageLink</label>
+  						<config>
+  							<type>check</type>
+  							<default>0</default>
+  						</config>
+  					</TCEforms>
+  				</settings.nivoslider.imageLink>
+
+  		    <!-- Nivoslider Css File -->
+					<settings.nivoslider.cssFile>
+						<TCEforms>
+  					  <displayCond>FIELD:switchableControllerActions:=:Slider->nivoslider</displayCond>
+							<exclude>1</exclude>
+							<label>LLL:EXT:newsslider/Resources/Private/Language/locallang.xml:flexform.css</label>
+							<config>
+								<type>group</type>
+								<internal_type>file</internal_type>
+								<allowed>css</allowed>
+								<size>1</size>
+								<maxitems>1</maxitems>
+								<minitems>0</minitems>
+								<show_thumbs>1</show_thumbs>
+							</config>
+						</TCEforms>
+					</settings.nivoslider.cssFile>
+
+        </el>
+     </ROOT>
+    </slider>
+
+
+	</sheets>
+</T3DataStructure>

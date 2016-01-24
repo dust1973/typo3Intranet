@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-06-40T13:36:40Z" product-name="woehrl_seminare">
+		<header/>
+		<body>
+
+			<trans-unit id="name.description">
+				<source>Name of the Location</source>
+			</trans-unit>
+			<trans-unit id="description.description">
+				<source>description of the location</source>
+			</trans-unit>
+			<trans-unit id="link.description">
+				<source>Link to further information</source>
+			</trans-unit>
+			<trans-unit id="parent.description">
+				<source>parent</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

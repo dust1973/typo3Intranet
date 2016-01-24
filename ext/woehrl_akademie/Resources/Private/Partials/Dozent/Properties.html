@@ -1,0 +1,35 @@
+
+<table class="tx-woehrl-akademie" >
+	<tr>
+		<td>
+			<f:translate key="tx_woehrlakademie_domain_model_dozent.vorname" />
+		</td>
+		<td>
+		{dozent.vorname}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_woehrlakademie_domain_model_dozent.nachname" />
+		</td>
+		<td>
+		{dozent.nachname}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_woehrlakademie_domain_model_dozent.bild" />
+		</td>
+		<td>
+				<f:image src="{dozent.bild.originalResource.publicUrl}" width="200"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_woehrlakademie_domain_model_dozent.beschreibung" />
+		</td>
+		<td>
+		{dozent.beschreibung}
+		</td>
+	</tr>
+</table>

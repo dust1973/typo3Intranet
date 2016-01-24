@@ -1,0 +1,11 @@
+{namespace newsslider=Tx_Newsslider_ViewHelpers}
+<f:if condition="{settings.jslidernews.imageLink}">
+  <f:then>
+	<newsslider:link newsItem="{newsItem}" settings="{settings}">
+		<newsslider:image src="{settings.list.media.dummyImage}" title="dummy" alt="dummy" width="{settings.jslidernews.width}c" height="{settings.jslidernews.height}c" />
+	</newsslider:link>
+  </f:then>
+  <f:else>
+	<newsslider:image src="{settings.list.media.dummyImage}" title="dummy" alt="dummy" width="{settings.jslidernews.width}c" height="{settings.jslidernews.height}c" />
+  </f:else>
+</f:if>

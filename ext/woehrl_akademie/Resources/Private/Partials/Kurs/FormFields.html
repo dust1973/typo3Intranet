@@ -1,0 +1,57 @@
+
+<label for="kursnummer">
+	<f:translate key="tx_woehrlakademie_domain_model_kurs.kursnummer" />
+</label><br />
+	<f:form.textfield property="kursnummer" /><br />
+<label for="title">
+	<f:translate key="tx_woehrlakademie_domain_model_kurs.title" />
+</label><br />
+	<f:form.textfield property="title" /><br />
+<label for="kursbeginn">
+	<f:translate key="tx_woehrlakademie_domain_model_kurs.kursbeginn" />
+</label><br />
+	<f:form.textfield property="kursbeginn"  value="{kurs.kursbeginn->f:format.date()}" /><br />
+<label for="kursende">
+	<f:translate key="tx_woehrlakademie_domain_model_kurs.kursende" />
+</label><br />
+	<f:form.textfield property="kursende"  value="{kurs.kursende->f:format.date()}" /><br />
+<label for="registrierungsbeginn">
+	<f:translate key="tx_woehrlakademie_domain_model_kurs.registrierungsbeginn" />
+</label><br />
+	<f:form.textfield property="registrierungsbeginn"  value="{kurs.registrierungsbeginn->f:format.date()}" /><br />
+<label for="registrierungsende">
+	<f:translate key="tx_woehrlakademie_domain_model_kurs.registrierungsende" />
+</label><br />
+	<f:form.textfield property="registrierungsende"  value="{kurs.registrierungsende->f:format.date()}" /><br />
+<label for="subtitle">
+	<f:translate key="tx_woehrlakademie_domain_model_kurs.subtitle" />
+</label><br />
+	<f:form.textfield property="subtitle" /><br />
+<label for="bodytext">
+	<f:translate key="tx_woehrlakademie_domain_model_kurs.bodytext" />
+</label><br />
+	<f:form.textarea property="bodytext" cols="40" rows="15" /><br />
+<label for="maxTeilnehmerAnzahl">
+	<f:translate key="tx_woehrlakademie_domain_model_kurs.max_teilnehmer_anzahl" />
+</label><br />
+	<f:form.textfield property="maxTeilnehmerAnzahl" /><br />
+<label for="preis">
+	<f:translate key="tx_woehrlakademie_domain_model_kurs.preis" />
+</label><br />
+	<f:form.textfield property="preis" /><br />
+<label for="previewImage">
+	<f:translate key="tx_woehrlakademie_domain_model_kurs.preview_image" />
+</label><br />
+	<span>File upload is not implemented!</span><br  /><br />
+<label for="files">
+	<f:translate key="tx_woehrlakademie_domain_model_kurs.files" />
+</label><br />
+	<f:form.textfield property="files" /><br />
+<label for="documents">
+	<f:translate key="tx_woehrlakademie_domain_model_kurs.documents" />
+</label><br />
+	<span>File upload is not implemented!</span><br /><br />
+<label for="kursBewertung">
+	<f:translate key="tx_woehrlakademie_domain_model_kurs.kurs_bewertung" />
+</label><br />
+	<f:form.textfield property="kursBewertung" /><br />

@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+@import "default.css";
+
+/* CSS Sytle for slider-style 5 */
+
+.lof-slider_5 .lof-main-outer .lof-next,  .lof-slider_5 .lof-main-outer .lof-previous {
+	top:0;
+	display:block;
+	width:40px;
+	cursor:pointer;
+	position:absolute;
+	height:100%;
+	z-index:5;
+	text-indent:-9999px;
+}
+.lof-slider_5 .lof-main-outer .lof-next {
+	right:5px;
+	background:url('images/b_next.png') no-repeat right center;
+}
+.lof-slider_5 .lof-main-outer .lof-previous {
+	left:5px;
+	background:url('images/b_prev.png') no-repeat left center;
+}
+.lof-slider_5 .button-control {
+  right: 10px;
+}

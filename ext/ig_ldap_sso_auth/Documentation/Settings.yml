@@ -1,0 +1,42 @@
+# This is the project specific Settings.yml file.
+# Place Sphinx specific build information here.
+# Settings given here will replace the settings of 'conf.py'.
+
+---
+conf.py:
+  copyright: 2000-2015
+  project: LDAP / SSO Authentication
+  version: 3.0
+  release: 3.0.1
+  latex_documents:
+  - - Index
+    - ig_ldap_sso_auth.tex
+    - LDAP / SSO Authentication
+    - Xavier Perseguers
+    - manual
+  latex_elements:
+    papersize: a4paper
+    pointsize: 10pt
+    preamble: \usepackage{typo3}
+  latex_show_pagerefs: True
+  extensions:
+    - sphinx.ext.intersphinx
+    - t3sphinx.ext.t3extras
+    - t3sphinx.ext.t3tablerows
+    - t3sphinx.ext.targets
+    - sphinx.ext.extlinks
+  extlinks:
+    forge:
+    - https://forge.typo3.org/issues/%s
+    - 'Forge ticket #'
+    ter:
+    - http://www.typo3.org/extensions/repository/view/%s
+    - 'EXT:'
+  intersphinx_mapping:
+    t3api:
+    - http://docs.typo3.org/typo3cms/CoreApiReference/
+    - null
+    t3tsref:
+    - http://docs.typo3.org/typo3cms/TyposcriptReference/
+    - null
+...

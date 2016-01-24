@@ -1,0 +1,93 @@
+{namespace n=Tx_News_ViewHelpers}
+<li class="navSelector">
+<f:if condition="{settings.jslidernews.style} == 1">
+    <f:if condition="{settings.jslidernews.navThumb} == 1">
+		<f:if condition="{newsItem.falMediaPreviews}">
+			<f:then>
+	        <f:render partial="Jslidernews/Thumbnail/Thumb" arguments="{newsItem: newsItem, settings:settings, className:className, view:view}"/>
+			</f:then>
+			<f:else>
+	      <f:render partial="Jslidernews/Thumbnail/Dummy" arguments="{newsItem: newsItem, settings:settings, className:className, view:view}"/>
+			</f:else>
+		</f:if>
+      </f:if>
+</f:if>
+<f:if condition="{settings.jslidernews.style} == 2">
+  <div class="alpha" style="float:left; height:{settings.jslidernews.alphaHeight}px; width:{settings.jslidernews.navWidth}px; margin:1px 0;"> </div>
+  <div class="innerNavSelector" style="height:{settings.jslidernews.innerNavSelectorHeight}px; width:95%; padding:15px; margin:1px 0;">
+      <f:if condition="{settings.jslidernews.navThumb} == 1">
+	  	<f:if condition="{newsItem.falMediaPreviews}">
+      		<f:then>
+            <f:render partial="Jslidernews/Thumbnail/Thumb" arguments="{newsItem: newsItem, settings:settings, className:className, view:view}"/>
+      		</f:then>
+        	<f:else>
+            <f:render partial="Jslidernews/Thumbnail/Dummy" arguments="{newsItem: newsItem, settings:settings, className:className, view:view}"/>
+        	</f:else>
+        </f:if>
+      </f:if>
+    <div class="navText" style="height:{settings.jslidernews.innerNavSelectorHeight}px;">
+      <h3 class="navTitle">{newsItem.title}</h3>
+      <f:if condition="{settings.jslidernews.showAltTileInNav}">
+      	<f:if condition="{newsItem.alternativeTitle}">
+      		<h4><n:format.htmlentitiesDecode>{newsItem.alternativeTitle}</n:format.htmlentitiesDecode></h4>
+      	</f:if>
+      </f:if>
+      <f:if condition="{settings.jslidernews.showCatInNav}">
+        <f:if condition="{newsItem.categories}">
+          <p class="category"><f:for each="{newsItem.categories}" as="category" iteration="iter">/{category.title}<f:if condition="{iter.isLast}">/</f:if></f:for></p>
+        </f:if>
+      </f:if>
+      <f:if condition="{settings.jslidernews.showDateInNav}">
+        <p><f:format.date format="d.m.Y">{newsItem.datetime}</f:format.date></p>
+      </f:if>
+      <f:if condition="{settings.jslidernews.showAuthorInNav}">
+      	<f:if condition="{newsItem.author}">
+          <p><f:translate key="author" arguments="{0:newsItem.author}"></f:translate></p>
+      	</f:if>
+      </f:if>
+    </div>
+  </div>
+</f:if>
+<f:if condition="{settings.jslidernews.style} == 3">
+  <div class="alpha" style="float:right; height:{settings.jslidernews.alphaHeight}px; width:{settings.jslidernews.navWidth}px; margin:1px 0;"> </div>
+  <div class="innerNavSelector" style="height:{settings.jslidernews.innerNavSelectorHeight}px; width:95%; padding:15px; margin:1px 0;">
+      <f:if condition="{settings.jslidernews.navThumb} == 1">
+	  	<f:if condition="{newsItem.falMediaPreviews}">
+      		<f:then>
+            <f:render partial="Jslidernews/Thumbnail/Thumb" arguments="{newsItem: newsItem, settings:settings, className:className, view:view}"/>
+      		</f:then>
+        	<f:else>
+            <f:render partial="Jslidernews/Thumbnail/Dummy" arguments="{newsItem: newsItem, settings:settings, className:className, view:view}"/>
+        	</f:else>
+        </f:if>
+      </f:if>
+    <div class="navText" style="height:{settings.jslidernews.innerNavSelectorHeight}px;">
+      <h3 class="navTitle">{newsItem.title}</h3>
+      <f:if condition="{settings.jslidernews.showCatInNav}">
+        <f:if condition="{newsItem.categories}">
+          <p>
+          	<f:render partial="Jslidernews/Slider/CatItem" arguments="{categories:newsItem.categories, settings:settings}"/>
+          </p>
+        </f:if>
+      </f:if>
+      <f:if condition="{settings.jslidernews.showDateInNav}">
+        <p>
+        	<f:format.date format="d.m.Y">{newsItem.datetime}</f:format.date>
+        </p>
+      </f:if>
+      <f:if condition="{settings.jslidernews.showAuthorInNav}">
+      	<f:if condition="{newsItem.author}">
+          <p>
+        		<f:translate key="author" arguments="{0:newsItem.author}"></f:translate>
+          </p>
+      	</f:if>
+      </f:if>
+      <f:if condition="{settings.jslidernews.showAltTileInNav}">
+      	<f:if condition="{newsItem.alternativeTitle}">
+      		<n:format.htmlentitiesDecode>{newsItem.alternativeTitle}</n:format.htmlentitiesDecode>
+      	</f:if>
+      </f:if>
+    </div>
+  </div>
+</f:if>
+</li>

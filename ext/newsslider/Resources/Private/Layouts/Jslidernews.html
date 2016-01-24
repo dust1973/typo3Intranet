@@ -1,0 +1,39 @@
+{namespace newsslider=Tx_Newsslider_ViewHelpers}
+<f:if condition="{settings.jslidernews.cssFile}">
+	<f:then>
+    <newsslider:includeFile path="{settings.jslidernews.cssFile}" />
+	</f:then>
+	<f:else>
+    <newsslider:includeFile path="EXT:newsslider/Resources/Public/Styles/Jslidernews/style{settings.jslidernews.style}.css" />
+	</f:else>
+</f:if>
+<f:if condition="{settings.jslidernews.includeJqueryEasing}">
+  <newsslider:includeFile path="EXT:newsslider/Resources/Public/Scripts/jquery.easing.js" />
+</f:if>
+<newsslider:includeFile path="EXT:newsslider/Resources/Public/Scripts/jslidernews.js" />
+<newsslider:inlineJs contentObjectUid="{contentObjectData.uid}" />
+<f:if condition="{news}">
+<div id="lofslidecontent{contentObjectData.uid}" class="newsslider lof-slider lof-slider_{settings.jslidernews.style}" style="width:{settings.jslidernews.width}px; height:{settings.jslidernews.height}px;">
+  <div class="lof-wrapper" style="width:{settings.jslidernews.width}px; height:{settings.jslidernews.height}px;">
+    <div class="preload" ><div style="width:{settings.jslidernews.imgWidth}px; height:{settings.jslidernews.imgHeight}px;">&nbsp;</div></div>
+    <f:render section="jslidernews" />
+    <f:if condition="{settings.jslidernews.auto}">
+      <f:if condition="{settings.jslidernews.progressbar}">
+        <div class="progressbar progressbar{contentObjectData.uid}" style="overflow: hidden;">&nbsp;</div>
+      </f:if>
+      <f:if condition="{settings.jslidernews.pause} == 2">
+        <div class="button-control button-control{contentObjectData.uid} action-stop"><span>&nbsp;</span></div>
+      </f:if>
+    </f:if>
+  </div>
+  <f:if condition="{settings.jslidernews.pagination}">
+    <ul class="navigationControl" style="width:{settings.jslidernews.width}px; overflow:hidden;">
+      <f:for each="{news}" as="newsItem" iteration="nr">
+        <f:if condition="{newsItem.mediaPreviews.0.type} == 0">
+        <li class="pagSelector">{nr.cycle}</li>
+        </f:if>
+    	</f:for>
+    </ul>
+  </f:if>
+</div>
+</f:if>

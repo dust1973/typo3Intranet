@@ -1,0 +1,5 @@
+{namespace se=Tx_WoehrlSeminare_ViewHelpers}
+<li class="woehrlseminare-category" id="category-{category.item.uid}">
+<f:form.checkbox id="woehrlseminare-category-{category.item.uid}" name="category[{category.item.uid}]" title="<se:format.stripTags htmlString='{category.item.description}'/>"  checked="1" value="1" onclick="checkBoxes(this)" />
+<label for="woehrlseminare-category-{category.item.uid}">{category.item.title}</label>
+<div class="altCheckElement"></div>

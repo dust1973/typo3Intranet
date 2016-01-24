@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-07-23T15:23:45Z" product-name="woehrl_akademie">
+		<header/>
+		<body>
+			<trans-unit id="kursnummer.description">
+				<source>kursnummer</source>
+			</trans-unit>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="kursbeginn.description">
+				<source>kursbeginn</source>
+			</trans-unit>
+			<trans-unit id="kursende.description">
+				<source>kursende</source>
+			</trans-unit>
+			<trans-unit id="registrierungsbeginn.description">
+				<source>registrierungsbeginn</source>
+			</trans-unit>
+			<trans-unit id="registrierungsende.description">
+				<source>registrierungsende</source>
+			</trans-unit>
+			<trans-unit id="subtitle.description">
+				<source>subtitle</source>
+			</trans-unit>
+			<trans-unit id="bodytext.description">
+				<source>bodytext</source>
+			</trans-unit>
+			<trans-unit id="max_teilnehmer_anzahl.description">
+				<source>maxTeilnehmerAnzahl</source>
+			</trans-unit>
+			<trans-unit id="preis.description">
+				<source>preis</source>
+			</trans-unit>
+			<trans-unit id="preview_image.description">
+				<source>previewImage</source>
+			</trans-unit>
+			<trans-unit id="files.description">
+				<source>files</source>
+			</trans-unit>
+			<trans-unit id="documents.description">
+				<source>documents</source>
+			</trans-unit>
+			<trans-unit id="kurs_bewertung.description">
+				<source>kursBewertung</source>
+			</trans-unit>
+			<trans-unit id="location.description">
+				<source>Location</source>
+			</trans-unit>
+			<trans-unit id="kategorien.description">
+				<source>Kategorien</source>
+			</trans-unit>
+			<trans-unit id="kompetenzen.description">
+				<source>Kompetenzen</source>
+			</trans-unit>
+			<trans-unit id="zielgruppen.description">
+				<source>Zielgruppen</source>
+			</trans-unit>
+			<trans-unit id="teilnehmer.description">
+				<source>Teilnehmer</source>
+			</trans-unit>
+			<trans-unit id="dozent.description">
+				<source>Dozent</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,17 @@
+plugin.tx_newsslider {
+	view {
+		 # cat=plugin.tx_newsslider/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:newsslider/Resources/Private/Templates/
+		 # cat=plugin.tx_newsslider/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:newsslider/Resources/Private/Partials/
+		 # cat=plugin.tx_newsslider/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:newsslider/Resources/Private/Layouts/
+	}
+  settings {
+     # cat=plugin.tx_newsslider/enable/001; type=boolean; label=Load jQuery library v1.11.0 by Google CDN:jQuery 2.x has the same API as jQuery 1.x, but does not support Internet Explorer 6, 7, or 8.
+    includeJquery = 0
+     # cat=plugin.tx_newsslider/enable/002; type=boolean; label=Load jQueryEasing: used with jslidernews
+    includeJqueryEasing = 1
+
+  }
+}

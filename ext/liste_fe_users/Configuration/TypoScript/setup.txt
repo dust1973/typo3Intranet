@@ -1,0 +1,49 @@
+
+plugin.tx_listefeusers {
+	view {
+		templateRootPath = {$plugin.tx_listefeusers.view.templateRootPath}
+		partialRootPath = {$plugin.tx_listefeusers.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_listefeusers.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_listefeusers.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+
+plugin.tx_listefeusers._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-liste-fe-users table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-liste-fe-users table th {
+		font-weight:bold;
+	}
+
+	.tx-liste-fe-users table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)

@@ -1,0 +1,56 @@
+{namespace newsslider=Tx_Newsslider_ViewHelpers}
+<f:layout name="Jslidernews" />
+<f:section name="jslidernews">
+
+<f:if condition="{settings.jslidernews.style} == 1">
+  <f:render partial="Jslidernews/Slider/MainOuter" arguments="{news: news, settings:settings}"/>
+  <f:if condition="{settings.jslidernews.verticalNav}">
+  <f:then>
+    <div class="lof-navigator-wapper lof-vertical">
+      <div class="alpha" style="float:left; width:100%; height:100%;">&nbsp;</div>
+      <div style="position:relative;">
+        <div onclick="return false" class="lof-previous" style="height:22px; width:{settings.jslidernews.navWidth}px;">Previous</div>
+          <f:render partial="Jslidernews/Slider/NavOuter" arguments="{news: news, settings:settings}"/>
+        <div onclick="return false" class="lof-next" style="height:22px; width:{settings.jslidernews.navWidth}px;">Next</div>
+      </div>
+    </div>
+  </f:then>
+  <f:else>
+    <div class="lof-navigator-wapper lof-horizontal">
+      <div class="alpha" style="float:left; width:100%; height:100%;">&nbsp;</div>
+      <div style="position:relative;">
+        <div onclick="return false" class="lof-previous" style="height:{settings.jslidernews.navHeight}px; width:22px;">Previous</div>
+          <f:render partial="Jslidernews/Slider/NavOuter" arguments="{news: news, settings:settings}"/>
+        <div onclick="return false" class="lof-next" style="height:{settings.jslidernews.navHeight}px; width:22px;">Next</div>
+      </div>
+    </div>
+  </f:else>
+  </f:if>
+</f:if>
+<f:if condition="{settings.jslidernews.style} == 2">
+  <f:render partial="Jslidernews/Slider/MainOuter" arguments="{news: news, settings:settings}"/>
+  <f:render partial="Jslidernews/Slider/NavOuter" arguments="{news: news, settings:settings}"/>
+</f:if>
+<f:if condition="{settings.jslidernews.style} == 3">
+  <f:render partial="Jslidernews/Slider/MainOuter" arguments="{news: news, settings:settings}"/>
+  <f:render partial="Jslidernews/Slider/NavOuter" arguments="{news: news, settings:settings}"/>
+</f:if>
+<f:if condition="{settings.jslidernews.style} == 4">
+  <f:render partial="Jslidernews/Slider/MainOuter" arguments="{news: news, settings:settings}"/>
+  <f:if condition="{settings.jslidernews.verticalNav}">
+    <f:then>
+      <div class="lof-navigator-wapper lof-vertical">
+        <f:render partial="Jslidernews/Slider/NavOuter" arguments="{news: news, settings:settings}"/>
+      </div>
+    </f:then>
+    <f:else>
+      <div class="lof-navigator-wapper lof-horizontal">
+        <f:render partial="Jslidernews/Slider/NavOuter" arguments="{news: news, settings:settings}"/>
+      </div>
+    </f:else>
+  </f:if>
+</f:if>
+<f:if condition="{settings.jslidernews.style} == 5">
+  <f:render partial="Jslidernews/Slider/MainOuter" arguments="{news: news, settings:settings}"/>
+</f:if>
+</f:section>

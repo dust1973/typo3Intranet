@@ -1,0 +1,10 @@
+# Setup
+plugin.tx_SBumfrage_pi1 {
+  questid = {$plugin.tx_SBumfrage_pi1.questid} 
+  cookie = {$plugin.tx_SBumfrage_pi1.cookie} 
+  result  = {$plugin.tx_SBumfrage_pi1.result} 
+  tplpoll =  {$plugin.tx_SBumfrage_pi1.tplpoll} 
+  tplresult =  {$plugin.tx_SBumfrage_pi1.tplresult}
+  parameter = {$plugin.tx_SBumfrage_pi1.parameter}
+  limitoffset =  {$plugin.tx_SBumfrage_pi1.limitoffset}
+}

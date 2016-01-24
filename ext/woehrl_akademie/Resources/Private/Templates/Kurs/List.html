@@ -1,0 +1,202 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<f:flashMessages />
+
+<f:comment>
+	<![CDATA[
+		<!--
+		Ohne CDATA wird der Inhalt ausgewertet
+		<f:debug2>{test}</f:debug2>
+		<f:debug>{kurses}
+
+		<f:debug>{settings}</f:debug>
+
+
+		# Funktioniert nur im cObject FLUIDTEMPLATE:
+		<f:debug>{data}</f:debug>
+
+		-->
+	]]>
+</f:comment>
+<f:debug>{_all}</f:debug>
+
+<f:form action="list" class="form-inline">
+	<div class="input-group">
+		<f:form.select name="kategorie" options="{kategorien}" value="{requestKategorie}"
+			optionLabelField="title" prependOptionLabel="---" class="form-control" />
+		<span class="input-group-btn">
+			<f:form.button class="btn btn-default">
+				<span class="glyphicon glyphicon-filter"></span>
+			</f:form.button>
+		</span>
+	</div>
+</f:form>
+
+<f:if condition="{kurses}">
+	<f:then>
+		<f:comment>
+		Es gibt <f:count>{kurses}</f:count> Events:
+			<f:count subject="{kurses}" />
+		</f:comment>
+
+		<f:translate
+				id="events_found"
+				arguments="{foo: '{kurses->f:count()}'}"
+				default="%1d Kursen gefunden"
+		/>
+		<f:widget.paginate objects="{kurses}" as="paginatedKurses" configuration="{itemsPerPage: 3, insertAbove: 1, insertBelow: 1, maximumNumberOfLinks: 10}">
+
+			<f:for each="{paginatedKurses}" as="kurs">
+				<div class="well event row">
+					<div class="col-md-4">
+						<f:link.action action="show" arguments="{kurs : kurs}">
+							<f:if condition="{kurs.previewImage}">
+								<f:then>
+									<!--
+									Orginal-Attribute:<br />
+			<f:link.action action="show" arguments="{kurs : kurs}"> {kurs.kursnummer}</f:link.action>
+			<f:link.action action="show" arguments="{kurs : kurs}"> {kurs.title}</f:link.action>
+			<f:link.action action="show" arguments="{kurs : kurs}"> {kurs.kursbeginn -> f:format.date()}</f:link.action>
+			<f:link.action action="show" arguments="{kurs : kurs}"> {kurs.kursende -> f:format.date()}</f:link.action>
+			<f:link.action action="show" arguments="{kurs : kurs}"> {kurs.registrierungsbeginn -> f:format.date()}</f:link.action>
+			<f:link.action action="show" arguments="{kurs : kurs}"> {kurs.registrierungsende -> f:format.date()}</f:link.action>
+			<f:link.action action="show" arguments="{kurs : kurs}"> {kurs.subtitle}</f:link.action>
+			<f:link.action action="show" arguments="{kurs : kurs}"> {kurs.bodytext}</f:link.action>
+			<f:link.action action="show" arguments="{kurs : kurs}"> {kurs.maxTeilnehmerAnzahl}</f:link.action>
+			<f:link.action action="show" arguments="{kurs : kurs}"> {kurs.preis}</f:link.action>
+			<f:link.action action="show" arguments="{kurs : kurs}"> {kurs.previewImage.originalResource.name}</f:link.action>
+			<f:link.action action="show" arguments="{kurs : kurs}"> {kurs.files}</f:link.action>
+			<f:link.action action="show" arguments="{kurs : kurs}"> {kurs.documents.originalResource.name}</f:link.action>
+			<f:link.action action="show" arguments="{kurs : kurs}"> {kurs.kursBewertung}</f:link.action>
+			<f:link.action action="edit" arguments="{kurs : kurs}">Edit</f:link.action>
+			<f:link.action action="delete" arguments="{kurs : kurs}">Delete</f:link.action>
+									Ausgabe als Bild:<br />
+									<f:image class="img-thumbnail" src="{kurs.previewImage.originalResource.originalFile.uid}" alt="" /><br />
+									<a href="{kurs.previewImage.originalResource.publicUrl}">{kurs.previewImage.originalResource.title}</a><br /><br />
+									-->
+									<f:image width="970" class="img-thumbnail" src="{kurs.previewImage.uid}" alt="" treatIdAsReference="TRUE" />
+								</f:then>
+								<f:else>
+									<f:image class="img-thumbnail" src="{settings.displayList.imageNotFound}" alt="Image not found" />
+								</f:else>
+							</f:if>
+						</f:link.action>
+						
+						<f:if condition="{kurs.zielgruppen}">
+							<h5>Zielgruppe: 
+								<f:for each="{kurs.zielgruppen}" as="zielgruppe" iteration="iter">
+									
+									<f:if condition="{iter.isLast}">
+										<f:then>
+										 {zielgruppe.art}
+										</f:then>
+										<f:else>
+										 {zielgruppe.art},
+										</f:else>
+									</f:if>
+									
+								</f:for>
+								
+							</h5>
+						</f:if>
+					</div>
+					<div class="col-md-8">
+						<f:link.action action="show" arguments="{kurs : kurs}" pageUid="{settings.singlePid}">
+							<h3>{kurs.title}<f:if condition="{kurs.subtitle}"> <small>{kurs.subtitle}</small></f:if></h3>
+						</f:link.action>
+
+						Kursbegin: <f:format.date format="%A, %d.%m.%Y">{kurs.kursbeginn}</f:format.date> um <f:format.date format="H:i">{kurs.kursbeginn}</f:format.date> Uhr
+						<hr />
+						<!--f:format.crop maxCharacters="50" append=" …" respectHtml="false">{kurs.bodytext}</f:format.crop-->
+						<f:format.crop maxCharacters="150" append=" ..." respectHtml="false"><f:format.stripTags>{kurs.bodytext}</f:format.stripTags></f:format.crop>
+
+						<hr />
+						<f:if condition="{f:format.date(date: '+0 days' format: 'Y-m-d')} < {f:format.date(date: kurs.registrierungsende, format: 'Y-m-d')}">
+							<f:then>
+								<f:link.action action="show" pageUid="{settings.singlePid}" arguments="{kurs : kurs}" class="btn btn-primary">
+									<f:translate id="more" default="Buchen"  /> <span class="glyphicon glyphicon-chevron-right"></span>
+								</f:link.action>
+							</f:then>
+							<f:else>
+									<span class="btn btn-primary"><f:translate id="more" default="Anmeldefrist beendet"  /> <span class="glyphicon glyphicon-lock"></span></span>
+							</f:else>
+						</f:if>
+
+					</div>
+				</div>
+			</f:for>
+		</f:widget.paginate>
+	</f:then>
+	<f:else>
+		<div class="alert alert-info">
+			<f:translate id="No_events_found" default="No events found." />
+		</div>
+	</f:else>
+</f:if>
+
+
+
+
+
+
+
+<f:comment><![CDATA[
+	<!--
+<table  class="tx_woehrlakademie" >
+	<tr>
+		<th><f:translate key="tx_woehrlakademie_domain_model_kurs.kursnummer" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_kurs.title" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_kurs.kursbeginn" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_kurs.kursende" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_kurs.registrierungsbeginn" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_kurs.registrierungsende" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_kurs.subtitle" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_kurs.bodytext" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_kurs.max_teilnehmer_anzahl" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_kurs.preis" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_kurs.preview_image" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_kurs.files" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_kurs.documents" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_kurs.kurs_bewertung" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{kurss}" as="kurs">
+		<tr>
+			<td><f:link.action action="show" arguments="{kurs : kurs}"> {kurs.kursnummer}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{kurs : kurs}"> {kurs.title}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{kurs : kurs}"> {kurs.kursbeginn -> f:format.date()}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{kurs : kurs}"> {kurs.kursende -> f:format.date()}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{kurs : kurs}"> {kurs.registrierungsbeginn -> f:format.date()}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{kurs : kurs}"> {kurs.registrierungsende -> f:format.date()}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{kurs : kurs}"> {kurs.subtitle}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{kurs : kurs}"> {kurs.bodytext}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{kurs : kurs}"> {kurs.maxTeilnehmerAnzahl}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{kurs : kurs}"> {kurs.preis}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{kurs : kurs}"> {kurs.previewImage.originalResource.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{kurs : kurs}"> {kurs.files}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{kurs : kurs}"> {kurs.documents.originalResource.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{kurs : kurs}"> {kurs.kursBewertung}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{kurs : kurs}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{kurs : kurs}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Kurs</f:link.action>-->
+]]></f:comment>
+</f:section>

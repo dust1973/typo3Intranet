@@ -1,0 +1,167 @@
+# ==============================================
+# FE-Plugin configuration for EXT:newsslider
+# ==============================================
+plugin.tx_newsslider {
+  view {
+		templateRootPaths.10 = {$plugin.tx_newsslider.view.templateRootPath}
+		partialRootPaths.10 = {$plugin.tx_newsslider.view.partialRootPath}
+		layoutRootPaths.10 = {$plugin.tx_newsslider.view.layoutRootPath}
+	}
+  settings < plugin.tx_news.settings
+  settings {
+    jquery = {$plugin.tx_newsslider.settings.includeJquery}
+      # If using multiple JS-Libraries (int).
+    jqueryNoConflict = 0
+    compressJS = FALSE
+    compressCSS = FALSE
+      # Move JS to the Footer if set (int).
+    moveJsFromHeaderToFooter = 1
+      # Move the inlineJS to the Footer if set (int).
+    moveInlineJsFromHeaderToFooter = 1
+
+		  # slider plugin configuration
+    jslidernews {
+        # Include jQuery Easing Plugin (version 1.3).
+      includeJqueryEasing = {$plugin.tx_newsslider.settings.includeJqueryEasing}
+        # Easing method (string - default: easeInOutQuad / info: http://gsgd.co.uk/sandbox/jquery/easing/).
+      easing = easeInOutQuad
+        # Number of the displayed navigationitems (int+ - default: 3).
+      maxItemDisplay = 3
+        # Mouse-Event for navigation - (0=click, 1=mouseover).
+      event = 0
+        # Time in milliseconds the animation stopped (int+ - default: 4000).
+      interval = 10000
+        # Slide transition speed in milliseconds (int+ - default: 600).
+      duration = 1600
+        # Fade the image and slide the text if set (boolean).
+      direction = 0
+        # Shows the category in description (boolean).
+      showCatInDesc = 1
+        # Shows the date in description (boolean).
+      showDateInDesc = 1
+        # Style 1&4 only - shows a vertical navigation if set (boolean).
+      verticalNav = 0
+        # Style 2&3 only - shows a thumbnail in the navigator if set (boolean).
+      navThumb = 1
+        # Style 2&3 only - shows news category in the navigator if set (boolean).
+      showCatInNav = 0
+        # Style 2&3 only - shows alt title in the navigator if set (boolean).
+      showAltTileInNav = 0
+        # Style 2&3 only - shows news author in the navigator if set (boolean).
+      showAuthorInNav = 0
+        # Style 2&3 only - shows news date in the navigator if set (boolean).
+      showDateInNav = 0
+    }
+
+    flexslider {
+    	// all missing options can be set by flexform
+        # The slide that the slider should start on. Array notation (0 = first slide)
+      startAt = 0
+        # Set the speed of the slideshow cycling, in milliseconds
+      slideshowSpeed = 7000
+        # Set the speed of animations, in milliseconds
+      animationSpeed = 600
+        # Pause the slideshow when interacting with control elements, highly recommended.
+      pauseOnAction = true
+        # Pause the slideshow when hovering over slider, then resume when no longer hovering
+      pauseOnHover = false
+        # Slider will use CSS3 transitions if available
+      useCSS = true
+        # Allow touch swipe navigation of the slider on touch-enabled devices
+      touch = true
+        # String: Determines the easing method used in jQuery transitions. jQuery easing plugin is supported!
+      easing = swing
+        # String: Select the sliding direction, "horizontal" or "vertical"
+      direction = horizontal
+        # Boolean: Reverse the animation direction
+      reverse = false
+        # Boolean: Should the animation loop? If false, directionNav will received "disable" classes at either end
+	  animationLoop = true
+        # Boolean: Allow height of the slider to animate smoothly in horizontal mode
+      smoothHeight = false
+        # Integer: Set an initialization delay, in milliseconds
+      initDelay = 0
+        # Boolean: Randomize slide order
+      randomize = false
+        # Boolean: If using video in the slider, will prevent CSS3 3D Transforms to avoid graphical glitches
+      video = false
+        # String: Set the text for the "previous" directionNav item
+      prevText = Previous
+        # String: Set the text for the "next" directionNav item
+      nextText = Next
+        # Boolean: Allow slider navigating via keyboard left/right keys
+      keyboard = true
+        # Boolean: Allow keyboard navigation to affect multiple sliders. Default behavior cuts out keyboard navigation with more than one slider present.
+      multipleKeyboard = false
+        # Boolean: Requires jquery.mousewheel.js (https://github.com/brandonaaron/jquery-mousewheel) - Allows slider navigating via mousewheel
+      mousewheel = false
+        # Boolean: Create pause/play dynamic element
+      pausePlay = false
+        # String: Set the text for the "pause" pausePlay item
+      pauseText = Pause
+        # String: Set the text for the "play" pausePlay item
+      playText = Play
+        // Carousel Options
+        # Integer: Carousel Options -> Margin between carousel items. If you change this, you have to edit the css-file (.carousel li {margin-right: 5px;})
+      itemMargin = 5
+        # Integer: Carousel Options -> Number of carousel items that should move on animation. If 0, slider will move all visible items.
+      move = 0
+        // Custom Options
+        # Boolean: Show caption in the slider
+      caption = 1
+    }
+
+    nivoslider {
+        # For slice animations
+      slices = 15
+        # For box animations
+      boxCols = 8
+        # For box animations
+      boxRows = 4
+        # Slide transition speed
+      animSpeed = 500
+        # How long each slide will show
+      pauseTime = 4000
+        # Set starting Slide (0 index)
+      startSlide = 0
+        # Stop animation while hovering
+      pauseOnHover = true
+        # Start on a random slide
+      randomStart = false
+        # Prev directionNav text
+      prevText = Prev
+        # Next directionNav text
+      nextText = Next
+    }
+
+  }
+
+/*
+  _CSS_DEFAULT_STYLE (
+    .theme-bar .nivo-controlNav {
+      height: 41px;
+    }
+
+  )
+*/
+
+}
+
+lib.math = TEXT
+lib.math {
+  current = 1
+  prioriCalc = intval
+}
+
+[globalVar = LIT:1 = {$plugin.tx_newsslider.settings.includeJquery}]
+page.includeJSFooterlibs {
+  jql = https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js
+  jql {
+    type = text/javascript
+    external = 1
+    forceOnTop = 1
+    disableCompression = 1
+    excludeFromConcatenation = 1
+  }
+}
+[global]

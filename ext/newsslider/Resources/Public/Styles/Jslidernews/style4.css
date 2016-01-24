@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+@import "default.css";
+
+/* CSS Sytle for slider-style 4 */
+
+.lof-slider_4 .lof-description {
+	-moz-box-shadow:0 0 3px #333;
+	-webkit-box-shadow:0 0 3px #333;
+  box-shadow: 0 0 3px #333;
+}
+.lof-slider_4 .lof-navigator-wapper {
+	-moz-border-radius:5px 5px 5px 5px;
+	-webkit-border-radius:5px 5px 5px 5px;
+  border-radius:5px 5px 5px 5px;
+	-moz-box-shadow:0 0 8px #CCC;
+	-webkit-box-shadow:0 0 8px #CCC;
+  box-shadow: 0 0 8px #333;
+	position:absolute;
+	bottom:10px;
+	right:10px;
+	background:#000;
+	padding:5px 15px;
+	color:#FFF;
+	z-index:4;
+}
+.lof-slider_4 .lof-navigator-outer {
+	position:relative;
+	overflow:hidden;
+	float:left;
+}
+.lof-slider_4 .lof-navigator {
+	padding:0;
+	margin:0;
+	position:absolute;
+}
+.lof-slider_4 .lof-navigator li {
+	cursor:pointer;
+	list-style:none;
+	padding:0;
+	margin:0;
+	overflow:hidden;
+	float:left;
+	display:block;
+	text-align:center;
+	line-height:15px;
+}
+.lof-slider_4 .lof-navigator li.active , ul.lof-navigator li span:hover  {
+	background:#FFF;
+	color:#000;
+}
+.lof-slider .button-control {
+  right: 10px;
+}

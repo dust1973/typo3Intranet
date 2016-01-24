@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-07-23T15:23:45Z" product-name="woehrl_akademie">
+		<header/>
+		<body>
+			<trans-unit id="vorname.description">
+				<source>vorname</source>
+			</trans-unit>
+			<trans-unit id="nachname.description">
+				<source>nachname</source>
+			</trans-unit>
+			<trans-unit id="bild.description">
+				<source>bild</source>
+			</trans-unit>
+			<trans-unit id="beschreibung.description">
+				<source>beschreibung</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,117 @@
+
+<table class="tx-woehrl-akademie" >
+	<tr>
+		<td>
+			<f:translate key="tx_woehrlakademie_domain_model_kurs.kursnummer" />
+		</td>
+		<td>
+		{kurs.kursnummer}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_woehrlakademie_domain_model_kurs.title" />
+		</td>
+		<td>
+		{kurs.title}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_woehrlakademie_domain_model_kurs.kursbeginn" />
+		</td>
+		<td>
+		{kurs.kursbeginn -> f:format.date()}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_woehrlakademie_domain_model_kurs.kursende" />
+		</td>
+		<td>
+		{kurs.kursende -> f:format.date()}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_woehrlakademie_domain_model_kurs.registrierungsbeginn" />
+		</td>
+		<td>
+		{kurs.registrierungsbeginn -> f:format.date()}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_woehrlakademie_domain_model_kurs.registrierungsende" />
+		</td>
+		<td>
+		{kurs.registrierungsende -> f:format.date()}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_woehrlakademie_domain_model_kurs.subtitle" />
+		</td>
+		<td>
+		{kurs.subtitle}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_woehrlakademie_domain_model_kurs.bodytext" />
+		</td>
+		<td>
+		{kurs.bodytext}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_woehrlakademie_domain_model_kurs.max_teilnehmer_anzahl" />
+		</td>
+		<td>
+		{kurs.maxTeilnehmerAnzahl}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_woehrlakademie_domain_model_kurs.preis" />
+		</td>
+		<td>
+		{kurs.preis}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_woehrlakademie_domain_model_kurs.preview_image" />
+		</td>
+		<td>
+				<f:image src="{kurs.previewImage.originalResource.publicUrl}" width="200"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_woehrlakademie_domain_model_kurs.files" />
+		</td>
+		<td>
+		{kurs.files}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_woehrlakademie_domain_model_kurs.documents" />
+		</td>
+		<td>
+				<a href="{kurs.documents.originalResource.publicUrl}">
+					{kurs.documents.originalResource.name}
+				</a>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_woehrlakademie_domain_model_kurs.kurs_bewertung" />
+		</td>
+		<td>
+		{kurs.kursBewertung}
+		</td>
+	</tr>
+</table>

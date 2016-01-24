@@ -1,0 +1,15 @@
+{namespace newsslider=Tx_Newsslider_ViewHelpers}
+<f:if condition="{settings.nivoslider.cssFile}">
+	<f:then>
+    <newsslider:includeFile path="{settings.nivoslider.cssFile}" />
+	</f:then>
+	<f:else>
+    <newsslider:includeFile path="EXT:newsslider/Resources/Public/Styles/Nivoslider/nivo-slider.css" />
+    <newsslider:includeFile path="EXT:newsslider/Resources/Public/Styles/Nivoslider/themes/{settings.nivoslider.theme}/{settings.nivoslider.theme}.css" />
+	</f:else>
+</f:if>
+<newsslider:includeFile path="EXT:newsslider/Resources/Public/Scripts/jquery.nivo.slider.pack.js" />
+<newsslider:inlineJs contentObjectUid="{contentObjectData.uid}" />
+<f:if condition="{news}">
+  <f:render section="nivoslider" />
+</f:if>

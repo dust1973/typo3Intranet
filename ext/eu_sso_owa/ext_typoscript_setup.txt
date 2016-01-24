@@ -1,0 +1,13 @@
+## Includes the newsLib:
+includeLibs.tx_eussoowa_pi1 = EXT:eu_sso_owa/pi1/class.tx_eussoowa_pi1.php
+
+## This enables the tt_content.list item to display the news:
+plugin.tx_eussoowa_pi1 >
+plugin.tx_eussoowa_pi1 = USER
+plugin.tx_eussoowa_pi1 {
+  userFunc = tx_eussoowa_pi1->main
+  
+  host = {$plugin.tx_eussoowa_pi1.host}
+  domain = {$plugin.tx_eussoowa_pi1.domain}
+  wg_path = {$plugin.tx_eussoowa_pi1.wg_path}
+}

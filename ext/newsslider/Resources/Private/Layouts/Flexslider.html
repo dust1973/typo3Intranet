@@ -1,0 +1,28 @@
+{namespace newsslider=Tx_Newsslider_ViewHelpers}
+<f:if condition="{settings.flexslider.cssFile}">
+	<f:then>
+		<newsslider:includeFile path="{settings.flexslider.cssFile}" />
+	</f:then>
+	<f:else>
+		<newsslider:includeFile path="EXT:newsslider/Resources/Public/Styles/Flexslider/flexslider.css" />
+	</f:else>
+</f:if>
+<newsslider:includeFile path="EXT:newsslider/Resources/Public/Scripts/jquery.flexslider-min.js" />
+<newsslider:inlineJs contentObjectUid="{contentObjectData.uid}" />
+<f:if condition="{news}">
+	<div class="newsslider flex-container">
+	<div id="flexslider_{contentObjectData.uid}" class="flexslider{f:if(condition:'{settings.flexslider.style}==4',then:' carousel')}
+	{f:if(condition:'{settings.flexslider.style}==5',then:'carousel')}" style="max-width:{settings.flexslider.width}px;" >
+	<ul class="slides">
+		<f:render section="flexslider" />
+	</ul>
+	</div>
+	<f:if condition="{settings.flexslider.style} == 3">
+	<div id="carousel_{contentObjectData.uid}" class="flexslider carousel thumbnailslider hidden-xs" style="max-width:{settings.flexslider.width}px;">
+		<ul class="slides">
+			<f:render section="ThumbnailSlider" />
+		</ul>
+	</div>
+	</f:if>
+	</div>
+</f:if>

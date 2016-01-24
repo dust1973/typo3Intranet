@@ -1,0 +1,72 @@
+{namespace se=Tx_WoehrlSeminare_ViewHelpers}
+<f:if condition="{settings.baseURL}">
+    <f:format.raw><head><base href="{settings.baseURL}" target="_blank"></head></f:format.raw>
+</f:if>
+<style>
+    body {
+        background-color:#f7f8f9;
+    }
+    }
+</style>
+<div style="padding:20px;font-family:Arial, Helvetica, sans-serif;font-size:14px;margin:20px;background-color:#f7f8f9;">
+    <p><img src="http://www.woehrl-akademie.de/fileadmin/html-templates/images/www.woehrl-akademie.de/Woehrl_Akademie_Logo.png" alt="Wöhrl Akademie" border="0" title="Wöhrl Akademie" ></p>
+
+    <f:if condition="{subscriber.anrede} == 1">
+        <f:then>
+            <p>Sehr geehrter Herr {subscriber.name},</p>
+        </f:then>
+        <f:else>
+            <p>Sehr geehrte Frau {subscriber.name},</p>
+        </f:else>
+    </f:if>
+
+
+
+    <p>vielen Dank für Ihre Anmeldung zu folgender Veranstaltung:</p>
+
+    <p><b>{event.title}</b></p>
+
+    <p>
+        <se:format.oneLine htmlString="<f:render partial='Event/DateFromTo' arguments='{event : event}' />" />
+    </p>
+
+    <f:if condition="{helper.location}">
+        <f:then>
+            <p><b>Veranstaltungsort: </b><br />{helper.location}</p>
+            <f:format.html>{event.location.description}</f:format.html>
+        </f:then>
+    </f:if>
+
+    <p>Folgende Daten haben wir von Ihnen gespeichert:</p>
+
+    <ul style="background-color:#f7f8f9;">
+
+        <li><f:translate key="tx_woehrlseminare_domain_model_subscriber.vorname" />: {subscriber.vorname}</li>
+        <li><f:translate key="tx_woehrlseminare_domain_model_subscriber.name" />: {subscriber.name}</li>
+        <li><f:translate key="tx_woehrlseminare_domain_model_subscriber.email" />: {subscriber.email}</li>
+        <f:if condition="{subscriber.telephone}">
+            <li><f:translate key="tx_woehrlseminare_domain_model_subscriber.telephone" />: {subscriber.telephone}</li>
+        </f:if>
+        <li>Haus Nr.: {subscriber.haus}</li>
+        <li><f:translate key="tx_woehrlseminare_domain_model_subscriber.customerid" />: {subscriber.customerid}</li>
+        <li><f:translate key="tx_woehrlseminare_domain_model_subscriber.position" />: {subscriber.position}</li>
+        <li><f:translate key="tx_woehrlseminare_domain_model_subscriber.kostenstelle" />: {subscriber.kostenstelle}</li>
+        <li><f:translate key="tx_woehrlseminare_domain_model_subscriber.number" />: {subscriber.number}</li>
+        <f:if condition="{subscriber.message}">
+            <li><f:translate key="tx_woehrlseminare_domain_model_subscriber.message" />: {subscriber.message}</li>
+            <li>eMail des Vorgesetzten: {subscriber.emaildesvorgesetzten}</li>
+        </f:if>
+    </ul>
+
+
+    <p><b>Beschreibung: </b></p>
+    <f:format.html>{event.description}</f:format.html>
+
+    <p>Sie können sich über folgenden Link wieder abmelden: <br />
+        <f:link.action absolute="1" class="woehrl-seminar-link" action="delete" controller="Subscriber" pageUid="{settings.pidUnSubscribeForm}" pluginName="Eventsubscribe" arguments="{event : event, editcode : subscriber.editcode}"><f:translate key="tx_woehrlseminare_domain_model_event.unsubscribe" /></f:link.action>
+    </p>
+    <p>Bei Fragen können Sie sich jederzeit an das WÖHRL Akademie-Team wenden unter Tel. 0911/8121-442 oder auch per E-Mail an Frau Diana Walter / <a href="mailto:Diana.walter@woehrl.de">Diana.walter@woehrl.de</a>. </p>
+    <p>Mit freundlichen Grüßen</p>
+    <p>Ihr WÖHRL Akademie-Team  <br /></p>
+
+</div>

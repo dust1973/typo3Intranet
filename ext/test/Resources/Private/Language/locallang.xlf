@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-08-03T17:02:11Z" product-name="test">
+		<header/>
+		<body>
+			<trans-unit id="tx_test_domain_model_testa">
+				<source>Test A</source>
+			</trans-unit>
+			<trans-unit id="tx_test_domain_model_testa.editcode">
+				<source>Editcode</source>
+			</trans-unit>
+			<trans-unit id="tx_test_domain_model_testb">
+				<source>Test B</source>
+			</trans-unit>
+			<trans-unit id="tx_test_domain_model_testb.kostenstelle">
+				<source>Kostenstelle</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,10 @@
+plugin.tx_eussoowa_pi1 {
+  # cat=plugin.tx_eussoowa_pi1//; type=string; label= Host: Host name of the OWA server, including http:// or https://
+  host = 
+  
+  # cat=plugin.tx_eussoowa_pi1//; type=string; label= Domain
+  domain = 
+  
+  # cat=plugin.tx_eussoowa_pi1//; type=string; label= relative path to eu_sso.php on OWA server
+  wg_path = php
+}

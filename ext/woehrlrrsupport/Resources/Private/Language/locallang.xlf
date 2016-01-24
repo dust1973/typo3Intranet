@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2015-10-21T14:31:53Z" product-name="woehrlrrsupport">
+		<header/>
+		<body>
+			<trans-unit id="tx_woehrlrrsupport_domain_model_settings">
+				<source>Settings</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlrrsupport_domain_model_logs">
+				<source>Logs</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

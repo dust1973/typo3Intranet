@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-07-21T10:32:13Z" product-name="woehrl_budgetbuersicht">
+		<header/>
+		<body>
+			<trans-unit id="tx_woehrlbudgetbuersicht_domain_model_haus">
+				<source>Haus</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlbudgetbuersicht_domain_model_haus.kostenstelle">
+				<source>Kostenstelle</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlbudgetbuersicht_domain_model_haus.budget_kst">
+				<source>Budget Kst</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

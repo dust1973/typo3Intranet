@@ -1,0 +1,233 @@
+{namespace newsslider=Tx_Newsslider_ViewHelpers}
+{namespace n=Tx_News_ViewHelpers}
+<f:layout name="Flexslider" />
+<f:section name="flexslider">
+<f:for each="{news}" as="newsItem">
+<n:excludeDisplayedNews newsItem="{newsItem}" />
+<f:if condition="{newsItem.falMediaPreviews}">
+<f:then>
+	<f:if condition="{settings.flexslider.style} == 2">
+		<f:then>
+			<f:comment><!-- Style 2 --></f:comment>
+			<li data-thumb="{f:render(section:'ThumbnailSrc', arguments:'{newsItem: newsItem, settings: settings}')}">
+		</f:then>
+		<f:else>
+			<li>
+		</f:else>
+	</f:if>
+	<f:if condition="{settings.flexslider.imageLink}">
+		<f:then>
+			<newsslider:link newsItem="{newsItem}" settings="{settings}">
+				<f:render section="Default" arguments="{newsItem: newsItem, settings: settings}" />
+			</newsslider:link>
+		</f:then>
+		<f:else>
+			<f:render section="Default" arguments="{newsItem: newsItem, settings: settings}" />
+		</f:else>
+	</f:if>
+	<f:if condition="{settings.flexslider.caption}">
+
+
+	<f:if condition="{settings.flexslider.style} == 5">
+		<f:else>
+
+			<f:render partial="Flexslider/Caption" arguments="{newsItem: newsItem, settings: settings}" />
+		</f:else>
+	</f:if>
+
+	</f:if>
+		</li>
+</f:then>
+<f:else>
+<f:comment><!-- DUMMY --></f:comment>
+	<f:if condition="{settings.flexslider.style} == 2">
+		<f:then>
+			<f:comment><!-- Style 2 --></f:comment>
+			<li data-thumb="{f:render(section:'ThumbnailSrcDummy', arguments:'{newsItem: newsItem, settings: settings}')}">
+		</f:then>
+		<f:else>
+			<li>
+		</f:else>
+	</f:if>
+		<f:if condition="{settings.flexslider.imageLink}">
+			<f:then>
+				<newsslider:link newsItem="{newsItem}" settings="{settings}">
+					<f:render section="DefaultDummy" arguments="{newsItem: newsItem, settings: settings}" />
+				</newsslider:link>
+			</f:then>
+			<f:else>
+				<f:render section="DefaultDummy" arguments="{newsItem: newsItem, settings: settings}" />
+			</f:else>
+		</f:if>
+		<f:if condition="{settings.flexslider.caption}">
+	<f:if condition="{settings.flexslider.style} == 5">
+		<f:then>
+
+		</f:then>
+		<f:else>
+			<f:render partial="Flexslider/Caption" arguments="{newsItem: newsItem, settings: settings}" />
+		</f:else>
+	</f:if>
+
+
+
+		</f:if>
+	</li>
+</f:else>
+</f:if>
+</f:for>
+</f:section>
+
+
+<f:section name="Default">
+<f:if condition="{settings.flexslider.style} > 3">
+	<f:then>
+		<f:if condition="{settings.flexslider.style} == 4">
+			<f:comment><!-- Style 4 (Carousel) --></f:comment>
+			<f:render section="Carousel" arguments="{newsItem: newsItem, settings: settings}" />
+		</f:if>
+		<f:if condition="{settings.flexslider.style} == 5">
+			<f:comment><!-- Style 5 (Carousel with min and max ranges) --></f:comment>
+			<f:render section="CarouselMinMax" arguments="{newsItem: newsItem, settings: settings}" />
+		</f:if>
+	</f:then>
+	<f:else>
+		<f:render section="MediaElement" arguments="{newsItem: newsItem, settings: settings}" />
+	</f:else>
+</f:if>
+</f:section>
+
+<f:section name="DefaultDummy">
+	<f:if condition="{settings.flexslider.style} > 3">
+		<f:then>
+			<f:if condition="{settings.flexslider.style} == 4">
+				<f:comment><!-- Style 4 (Carousel) --></f:comment>
+				<f:image src="{settings.list.media.dummyImage}"
+					width="{f:cObject(typoscriptObjectPath:'lib.math',data:'({settings.flexslider.width}-8-({settings.flexslider.thumbnumber}*
+					{settings.flexslider.itemMargin}-{settings.flexslider.itemMargin}))/{settings.flexslider.thumbnumber}')}c"
+					height="{settings.flexslider.thumbheight}c" />
+			</f:if>
+			<f:if condition="{settings.flexslider.style} == 5">
+				<f:comment><!-- Style 5 (Carousel with min and max ranges) --></f:comment>
+				<f:image src="{settings.list.media.dummyImage}"
+					width="{f:cObject(typoscriptObjectPath:'lib.math',data:'({settings.flexslider.width}-8-({settings.flexslider.maxItems}*
+					{settings.flexslider.itemMargin}-{settings.flexslider.itemMargin}))/{settings.flexslider.maxItems}')}c"
+					height="{settings.flexslider.thumbheight}c" />
+			</f:if>
+		</f:then>
+		<f:else>
+			<newsslider:image src="{settings.list.media.dummyImage}" title="dummy" alt="dummy" width="{settings.flexslider.width}c" height="{settings.flexslider.height}c" />
+		</f:else>
+	</f:if>
+</f:section>
+
+
+<f:comment><!-- Default-Style 1 --></f:comment>
+<f:section name="MediaElement">
+	<f:alias map="{mediaElement: newsItem.falMediaPreviews.0}">
+		<f:comment><!-- IMAGE --></f:comment>
+		<f:if condition="{mediaElement.originalResource.type} == 2">
+			<newsslider:image src="{mediaElement.uid}" treatIdAsReference="1" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}"
+				width="{settings.flexslider.width}c" height="{settings.flexslider.height}c" />
+		</f:if>
+		<f:comment><!-- VIDEO --></f:comment>
+		<f:if condition="{mediaElement.originalResource.type} == 4">
+<f:render partial="Flexslider/FalMediaVideo" arguments="{mediaElement: mediaElement}" />
+		</f:if>
+	</f:alias>
+</f:section>
+
+
+<f:comment><!-- Style 2 (Thumbnail ControlNav Pattern) --></f:comment>
+<f:section name="ThumbnailSrc">
+	<f:alias map="{thumbnailScr: newsItem.falMediaPreviews.0}">
+		<f:comment><!-- IMAGE --></f:comment>
+		<f:if condition="{thumbnailScr.originalResource.type} == 2">
+			<f:uri.image src="{thumbnailScr.uid}" treatIdAsReference="1" width="{f:cObject(typoscriptObjectPath:'lib.math',data:'({settings.flexslider.width}-8)/4')}c"
+			height="{f:cObject(typoscriptObjectPath:'lib.math',data:'{settings.flexslider.height}/4')}c" />
+		</f:if>
+		<f:comment><!-- VIDEO --></f:comment>
+		<f:if condition="{thumbnailScr.originalResource.type} == 4">
+<f:render partial="Flexslider/FalMediaVideo" arguments="{mediaElement: thumbnailScr}" />
+		</f:if>
+	</f:alias>
+</f:section>
+
+<f:comment><!-- Style 2 - DUMMY (Thumbnail ControlNav Pattern) --></f:comment>
+<f:section name="ThumbnailSrcDummy">
+	<f:uri.image src="{settings.list.media.dummyImage}" width="{f:cObject(typoscriptObjectPath:'lib.math',data:'({settings.flexslider.width}-8)/4')}c"
+		height="{f:cObject(typoscriptObjectPath:'lib.math',data:'{settings.flexslider.height}/4')}c" />
+</f:section>
+
+
+<f:comment><!-- Style 3 (Slider w/thumbnail slider) --></f:comment>
+<f:section name="ThumbnailSlider">
+<f:for each="{news}" as="newsItem">
+
+<n:excludeDisplayedNews newsItem="{newsItem}" />
+
+<f:if condition="{newsItem.falMediaPreviews}">
+<f:then>
+	<li>
+		<f:alias map="{thumbnailSlider: newsItem.falMediaPreviews.0}">
+		<f:comment><!-- IMAGE --></f:comment>
+		<f:if condition="{thumbnailSlider.originalResource.type} == 2">
+			<f:image src="{thumbnailSlider.uid}" treatIdAsReference="1"
+				width="{f:cObject(typoscriptObjectPath:'lib.math',data:'({settings.flexslider.width}-8-({settings.flexslider.thumbnumber}*
+				{settings.flexslider.itemMargin}-{settings.flexslider.itemMargin}))/{settings.flexslider.thumbnumber}')}c"
+				height="{f:cObject(typoscriptObjectPath:'lib.math',data:'{settings.flexslider.height}/{settings.flexslider.thumbnumber}')}c" />
+		</f:if>
+		<f:comment><!-- VIDEO --></f:comment>
+		<f:if condition="{thumbnailSlider.originalResource.type} == 4">
+<f:render partial="Flexslider/FalMediaVideo" arguments="{mediaElement: thumbnailSlider}" />
+		</f:if>
+		</f:alias>
+	</li>
+</f:then>
+<f:else>
+	<li>
+	<f:image src="{settings.list.media.dummyImage}" width="{f:cObject(typoscriptObjectPath:'lib.math',data:'({settings.flexslider.width}-8-({settings.flexslider.thumbnumber}*
+		{settings.flexslider.itemMargin}-{settings.flexslider.itemMargin}))/{settings.flexslider.thumbnumber}')}c"
+		height="{f:cObject(typoscriptObjectPath:'lib.math',data:'{settings.flexslider.height}/{settings.flexslider.thumbnumber}')}c" />
+	</li>
+</f:else>
+</f:if>
+</f:for>
+</f:section>
+
+
+<f:comment><!-- Style 4 (Basic Carousel) --></f:comment>
+<f:section name="Carousel">
+	<f:alias map="{carousel: newsItem.falMediaPreviews.0}">
+		<f:comment><!-- IMAGE --></f:comment>
+		<f:if condition="{carousel.originalResource.type} == 2">
+			<f:image src="{carousel.uid}" treatIdAsReference="1"
+				width="{f:cObject(typoscriptObjectPath:'lib.math',data:'({settings.flexslider.width}-8-({settings.flexslider.thumbnumber}*
+				{settings.flexslider.itemMargin}-{settings.flexslider.itemMargin}))/{settings.flexslider.thumbnumber}')}c"
+				height="{settings.flexslider.thumbheight}c" />
+		</f:if>
+		<f:comment><!-- VIDEO --></f:comment>
+		<f:if condition="{carousel.originalResource.type} == 4">
+<f:render partial="Flexslider/FalMediaVideo" arguments="{mediaElement: carousel}" />
+		</f:if>
+	</f:alias>
+</f:section>
+
+
+<f:comment><!-- Style 5 (Carousel with min and max ranges) --></f:comment>
+<f:section name="CarouselMinMax">
+	<f:alias map="{carouselMinMax: newsItem.falMediaPreviews.0}">
+		<f:comment><!-- IMAGE --></f:comment>
+		<f:if condition="{carouselMinMax.originalResource.type} == 2">
+			<f:image src="{carouselMinMax.uid}" treatIdAsReference="1"
+				width="{f:cObject(typoscriptObjectPath:'lib.math',data:'({settings.flexslider.width}-8-(({settings.flexslider.maxItems}-1)*
+				{settings.flexslider.itemMargin}-{settings.flexslider.itemMargin}))/({settings.flexslider.maxItems}-1)')}c"
+				height="{settings.flexslider.thumbheight}c" />
+		</f:if>
+		<f:comment><!-- VIDEO --></f:comment>
+		<f:if condition="{carouselMinMax.originalResource.type} == 4">
+<f:render partial="Flexslider/FalMediaVideo" arguments="{mediaElement: carouselMinMax}" />
+		</f:if>
+	</f:alias>
+</f:section>
+

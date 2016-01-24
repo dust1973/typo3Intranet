@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'brutto_umsatz'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_bruttoumsatz_woehrl">WSL Brutto-Umsatz</label>
+			<label index="tx_bruttoumsatz_woehrl.monat">Monat</label>
+			<label index="tx_bruttoumsatz_woehrl.laufend_w">WÖHRL laufend</label>
+			<label index="tx_bruttoumsatz_woehrl.laufend_s">SinnLeffers laufend</label>
+			<label index="tx_bruttoumsatz_woehrl.vorjahr_w">WÖHRL Vorjahr</label>
+			<label index="tx_bruttoumsatz_woehrl.vorjahr_s">SinnLeffers Vorjahr</label>
+			<label index="tx_bruttoumsatz_woehrl.prozent_zu_vj_w">WÖHRL Prozent zu VJ</label>
+			<label index="tx_bruttoumsatz_woehrl.prozent_zu_vj_s">SinnLeffers Prozent zu VJ</label>
+			<label index="tx_bruttoumsatz_woehrl.prozent_zu_vj">Markttrend % zu VJ</label>
+			<label index="tt_content.list_type_pi1">Brutto-Umsatz</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="tx_bruttoumsatz_woehrl">WSL Brutto-Umsatz</label>
+			<label index="tx_bruttoumsatz_woehrl.monat">Monat</label>
+			<label index="tx_bruttoumsatz_woehrl.laufend_w">WÖHRL laufend</label>
+			<label index="tx_bruttoumsatz_woehrl.laufend_s">SinnLeffers laufend</label>
+			<label index="tx_bruttoumsatz_woehrl.vorjahr_w">WÖHRL Vorjahr</label>
+			<label index="tx_bruttoumsatz_woehrl.vorjahr_s">SinnLeffers Vorjahr</label>
+			<label index="tx_bruttoumsatz_woehrl.prozent_zu_vj_w">WÖHRL Prozent zu VJ</label>
+			<label index="tx_bruttoumsatz_woehrl.prozent_zu_vj_s">SinnLeffers Prozent zu VJ</label>
+			<label index="tx_bruttoumsatz_woehrl.prozent_zu_vj">Markttrend % zu VJ</label>
+			<label index="tt_content.list_type_pi1">Brutto-Umsatz</label>
+		</languageKey>
+	</data>
+</T3locallang>

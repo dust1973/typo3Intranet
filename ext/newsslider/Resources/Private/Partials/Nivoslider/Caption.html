@@ -1,0 +1,17 @@
+{namespace newsslider=Tx_Newsslider_ViewHelpers}
+{namespace n=Tx_News_ViewHelpers}
+<div id="htmlcaption{i.cycle}" class="nivo-html-caption">
+	<h3 class="caption-title" style="margin:0;">
+		<newsslider:link newsItem="{newsItem}" settings="{settings}">{newsItem.title}</newsslider:link>
+	</h3>
+	<f:if condition="{newsItem.teaser}">
+	<f:then>
+		<p class="caption hidden-xs"><f:format.crop append="&nbsp;... <span class='readmore'><newsslider:link newsItem='{newsItem}' settings='{settings}'>
+			<f:translate key='readmore'></f:translate></newsslider:link></span>" maxCharacters="{settings.cropMaxCharacters}" respectWordBoundaries="true">{newsItem.teaser}</f:format.crop></p>
+	</f:then>
+	<f:else>
+		<p class="caption hidden-xs"><f:format.crop append="&nbsp;... <span class='readmore'><newsslider:link newsItem='{newsItem}' settings='{settings}'>
+			<f:translate key='readmore'></f:translate></newsslider:link></span>" maxCharacters="{settings.cropMaxCharacters}" respectWordBoundaries="true">{newsItem.bodytext}</f:format.crop></p>
+	</f:else>
+</f:if>
+</div>

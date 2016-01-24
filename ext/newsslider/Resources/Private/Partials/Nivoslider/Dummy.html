@@ -1,0 +1,11 @@
+{namespace newsslider=Tx_Newsslider_ViewHelpers}
+<f:if condition="{settings.nivolider.imageLink}">
+  <f:then>
+  	<newsslider:link newsItem="{newsItem}" settings="{settings}">
+		<newsslider:image src="{settings.list.media.dummyImage}" title="#htmlcaption{i.cycle}" alt="dummy" width="{settings.nivoslider.width}c" height="{settings.nivoslider.height}c" />
+	</newsslider:link>
+  </f:then>
+  <f:else>
+	<newsslider:image src="{settings.list.media.dummyImage}" title="#htmlcaption{i.cycle}" alt="dummy" width="{settings.nivoslider.width}c" height="{settings.nivoslider.height}c" />
+  </f:else>
+</f:if>

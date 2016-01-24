@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-07-23T15:23:45Z" product-name="woehrl_akademie">
+		<header/>
+		<body>
+			<trans-unit id="tx_woehrlakademie_domain_model_kurs">
+				<source>Kurs</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_kurs.kursnummer">
+				<source>Kursnummer</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_kurs.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_kurs.kursbeginn">
+				<source>Kursbeginn</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_kurs.kursende">
+				<source>Kursende</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_kurs.registrierungsbeginn">
+				<source>Registrierungsbeginn</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_kurs.registrierungsende">
+				<source>Registrierungsende</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_kurs.subtitle">
+				<source>Subtitle</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_kurs.bodytext">
+				<source>Bodytext</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_kurs.max_teilnehmer_anzahl">
+				<source>Max Teilnehmer Anzahl</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_kurs.preis">
+				<source>Preis</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_kurs.preview_image">
+				<source>Preview Image</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_kurs.files">
+				<source>Files</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_kurs.documents">
+				<source>Documents</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_kurs.kurs_bewertung">
+				<source>Kurs Bewertung</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_kurs.location">
+				<source>Location</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_kurs.kategorien">
+				<source>Kategorien</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_kurs.kompetenzen">
+				<source>Kompetenzen</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_kurs.zielgruppen">
+				<source>Zielgruppen</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_kurs.teilnehmer">
+				<source>Teilnehmer</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_kurs.dozent">
+				<source>Dozent</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_schulungsort">
+				<source>Schulungsort</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_schulungsort.titel">
+				<source>Titel</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_schulungsort.strasse">
+				<source>Strasse</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_schulungsort.plz">
+				<source>Plz</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_schulungsort.ort">
+				<source>Ort</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_schulungsort.telefon">
+				<source>Telefon</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_kategorie">
+				<source>Kategorie</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_kategorie.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_kompetenz">
+				<source>Kompetenz</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_kompetenz.titel">
+				<source>Titel</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_kompetenz.bodytext">
+				<source>Bodytext</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_kompetenz.image">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_zielgruppe">
+				<source>Zielgruppe</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_zielgruppe.art">
+				<source>Art</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_teilnehmer">
+				<source>Teilnehmer</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_teilnehmer.anrede">
+				<source>Anrede</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_teilnehmer.vorname">
+				<source>Vorname</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_teilnehmer.nachname">
+				<source>Nachname</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_teilnehmer.filiale">
+				<source>Filiale</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_teilnehmer.position">
+				<source>Position</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_teilnehmer.personal_nr">
+				<source>Personal Nr</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_teilnehmer.kostenstelle">
+				<source>Kostenstelle</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_teilnehmer.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_teilnehmer.telefon">
+				<source>Telefon</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_teilnehmer.genehmigt">
+				<source>Genehmigt</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_teilnehmer.emaildesvorgesezten">
+				<source>Emaildesvorgesezten</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_dozent">
+				<source>Dozent</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_dozent.vorname">
+				<source>Vorname</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_dozent.nachname">
+				<source>Nachname</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_dozent.bild">
+				<source>Bild</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlakademie_domain_model_dozent.beschreibung">
+				<source>Beschreibung</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

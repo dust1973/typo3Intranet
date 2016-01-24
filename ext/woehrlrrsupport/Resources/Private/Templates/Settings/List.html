@@ -1,0 +1,31 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+<f:flashMessages renderMode="div" />
+
+	<h3><f:link.action action="list" class="btn btn-default" controller="Logs" arguments="{settingss : settingss}">Logs ansehen</f:link.action> |
+		<f:link.action action="show" class="btn btn-default" controller="Settings" arguments="{settingss : settingss}">Settings ansehen/&auml;ndern</f:link.action></h3>
+
+	<f:for each="{settingss}" as="settings">
+		<tr>
+			<td><f:link.action action="edit" arguments="{settings : settings}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{settings : settings}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+
+
+<!--f:link.action action="new">New Settings</f:link.action-->
+</f:section>

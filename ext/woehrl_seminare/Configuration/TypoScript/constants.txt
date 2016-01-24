@@ -1,0 +1,16 @@
+plugin.tx_woehrlseminare {
+	view {
+		# cat=plugin.tx_woehrlseminare/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:woehrl_seminare/Resources/Private/Templates/
+		# cat=plugin.tx_woehrlseminare/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:woehrl_seminare/Resources/Private/Partials/
+		# cat=plugin.tx_woehrlseminare/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:woehrl_seminare/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_woehrlseminare//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}
+
+## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder

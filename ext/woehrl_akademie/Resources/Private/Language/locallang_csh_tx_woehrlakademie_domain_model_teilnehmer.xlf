@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-07-23T15:23:45Z" product-name="woehrl_akademie">
+		<header/>
+		<body>
+			<trans-unit id="anrede.description">
+				<source>anrede</source>
+			</trans-unit>
+			<trans-unit id="vorname.description">
+				<source>vorname</source>
+			</trans-unit>
+			<trans-unit id="nachname.description">
+				<source>nachname</source>
+			</trans-unit>
+			<trans-unit id="filiale.description">
+				<source>filiale</source>
+			</trans-unit>
+			<trans-unit id="position.description">
+				<source>position</source>
+			</trans-unit>
+			<trans-unit id="personal_nr.description">
+				<source>personalNr</source>
+			</trans-unit>
+			<trans-unit id="kostenstelle.description">
+				<source>kostenstelle</source>
+			</trans-unit>
+			<trans-unit id="email.description">
+				<source>email</source>
+			</trans-unit>
+			<trans-unit id="telefon.description">
+				<source>telefon</source>
+			</trans-unit>
+			<trans-unit id="genehmigt.description">
+				<source>genehmigt</source>
+			</trans-unit>
+			<trans-unit id="emaildesvorgesezten.description">
+				<source>emaildesvorgesezten</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

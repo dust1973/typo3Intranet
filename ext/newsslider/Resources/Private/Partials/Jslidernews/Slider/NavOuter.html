@@ -1,0 +1,24 @@
+<f:if condition="{settings.jslidernews.style} == 4">
+<f:then>
+	<div class="lof-navigator-outer">
+		<ul class="lof-navigator">
+			<f:for each="{news}" as="newsItem" iteration="nr">
+				<n:excludeDisplayedNews newsItem="{newsItem}" />
+				<f:if condition="{newsItem.mediaPreviews.0.type} == 0">
+					<li class="navSelector" style="height:{settings.jslidernews.navHeight}px; width:{settings.jslidernews.navWidth}px;">{nr.cycle}</li>
+				</f:if>
+			</f:for>
+		</ul>
+	</div>
+</f:then>
+<f:else>
+	<div class="lof-navigator-outer">
+		<ul class="lof-navigator">
+			<f:for each="{news}" as="newsItem">
+				<n:excludeDisplayedNews newsItem="{newsItem}" />
+				<f:render partial="Jslidernews/Slider/NavItem" arguments="{newsItem: newsItem, settings:settings}"/>
+			</f:for>
+		</ul>
+	</div>
+</f:else>
+</f:if>

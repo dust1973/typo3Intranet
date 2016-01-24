@@ -1,0 +1,1 @@
+<? $ssokey = 'opqwhg297kohgre82176'; ?>

@@ -1,0 +1,127 @@
+
+## EXTENSION BUILDER DEFAULTS END TOKEN - Everything BEFORE this line is overwritten with the defaults of the extension builder
+
+page.includeCSS.woehrlseminare = EXT:woehrl_seminare/Resources/Public/Css/woehrl-akademie-basic.css
+page.includeCSS.woehrlseminaregb = EXT:woehrl_seminare/Resources/Public/Css/woehrl-akademie-event-gb.css
+
+plugin.tx_woehrlseminare {
+	view {
+		templateRootPath = {$plugin.tx_woehrlseminare.view.templateRootPath}
+		partialRootPath = {$plugin.tx_woehrlseminare.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_woehrlseminare.view.layoutRootPath}
+				#widget {
+        			#TYPO3\CMS\Fluid\ViewHelpers\Widget\PaginateViewHelper {
+        				#templateRootPath = {$plugin.tx_woehrlseminare.view.templateRootPath}
+        			#}
+        		#}
+	}
+	persistence {
+		storagePid = {$plugin.tx_woehrlseminare.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		rewrittenPropertyMapper = 1
+		skipDefaultArguments = 1
+	}
+	settings {
+
+		veranstalter.name = WÖHRL Akademie
+		veranstalter.email = akademie@woehrl.de
+		# hide the pagination
+		hidePagination = 0
+		senderEmailAddress = akademie@woehrl.de
+		emailToContact {
+			# send email if the maxSubscriber limit is reached
+			sendEmailOnMaximumReached = 1
+			# send email if the the minSubscriber limit is reached due to cancellations
+			sendEmailOnFreeAgain = 1
+			sendEmailOnEveryBooking = 1
+		}
+		# --------------
+		#  List
+		# --------------
+		list {
+			# Paginate configuration.
+			paginate {
+				itemsPerPage = 10
+				insertAbove = TRUE
+				insertBelow = TRUE
+				lessPages = TRUE
+				forcedNumberOfLinks = 5
+				pagesBefore = 3
+				pagesAfter = 3
+			}
+		}
+		# set baseURL in Emails - needed for images in description field
+		#baseURL = http://www.example.com/
+	}
+}
+module.tx_woehrlseminare < plugin.tx_woehrlseminare
+module.tx_woehrlseminare {
+	view {
+		templateRootPath = {$module.tx_woehrlseminare.view.templateRootPath}
+		partialRootPath = {$module.tx_woehrlseminare.view.partialRootPath}
+		layoutRootPath = {$module.tx_woehrlseminare.view.layoutRootPath}
+		#widget.Tx_Fluid_ViewHelpers_Widget_PaginateViewHelper.templateRootPath = {$plugin.tx_woehrlseminare.view.templateRootPath}
+						widget {
+                			TYPO3\CMS\Fluid\ViewHelpers\Widget\PaginateViewHelper {
+                				templateRootPath = {$plugin.tx_woehrlseminare.view.templateRootPath}
+                			}
+                		}
+	}
+	persistence {
+		storagePid = {$module.tx_woehrlseminare.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		rewrittenPropertyMapper = 1
+	}
+	settings {
+		senderEmailAddress = akademie@woehrl.de
+		# hide the pagination
+		hidePagination = 0
+		# --------------
+		#  List
+		# --------------
+		list {
+			# Paginate configuration.
+			paginate {
+				itemsPerPage = 10
+				insertAbove = FALSE
+				insertBelow = TRUE
+				lessPages = TRUE
+				forcedNumberOfLinks = 5
+				pagesBefore = 3
+				pagesAfter = 3
+			}
+		}
+
+	}
+}
+
+# ajax for fullcalendar
+ajaxEvents = PAGE
+ajaxEvents {
+	typeNum = 182098
+	10 = USER_INT
+	10 {
+		userFunc = tx_extbase_core_bootstrap->run
+		pluginName = Eventlist
+		extensionName = WoehrlSeminare
+		controller = Event
+		switchableControllerActions {
+			Event {
+				1 = ajax
+			}
+		}
+		settings =< plugin.tx_woehrlseminare.settings
+		persistence =< plugin.tx_woehrlseminare.persistence
+	}
+	config {
+		disableAllHeaderCode = 1
+		additionalHeaders = Content-type:application/json
+		xhtml_cleaning = 0
+		admPanel = 1
+		debug = 1
+	}
+}

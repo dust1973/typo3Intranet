@@ -1,0 +1,153 @@
+{namespace femanager=In2\Femanager\ViewHelpers}
+<f:layout name="Default" />
+
+	User / List
+
+	This Template is responsible for the femanager list view
+
+<f:section name="main">
+	<div class="femanager_list">
+		<f:flashMessages class="femanager_flashmessages" renderMode="div" />
+
+		<f:render partial="User/Searchform" arguments="{_all}" />
+
+		<f:if condition="{users}">
+			<f:then>
+				<table class="table table-bordered">
+					<tr>
+						<td>
+							<h5>
+								<f:link.action action="list" arguments="{sort: 'asc', field: 'uid'}"><span class="glyphicon glyphicon-sort-by-attributes"></span></f:link.action> uid <f:link.action action="list" arguments="{sort: 'desc', field: 'uid'}"><span class="glyphicon glyphicon-sort-by-attributes-alt"></span></f:link.action></h5></td>
+						<td><h5><f:link.action action="list" arguments="{sort: 'asc', field: 'disable'}"><span class="glyphicon glyphicon-sort-by-attributes"></span></f:link.action> Active/Inactive <f:link.action action="list" arguments="{sort: 'desc', field: 'disable'}"><span class="glyphicon glyphicon-sort-by-attributes-alt"></span></f:link.action></h5></td>
+						<td><h5><f:link.action action="list" arguments="{sort: 'asc', field: 'crdate'}">
+							<span class="glyphicon glyphicon-sort-by-attributes"></span></f:link.action> Erstellungsdatum <f:link.action action="list" arguments="{sort: 'desc', field: 'crdate'}"><span class="glyphicon glyphicon-sort-by-attributes-alt"></span></f:link.action></h5></td>
+						<td><h5>
+							<f:link.action action="list" arguments="{sort: 'asc', field: 'username'}"><span class="glyphicon glyphicon-sort-by-attributes"></span></f:link.action> Benutzername <f:link.action action="list" arguments="{sort: 'desc', field: 'username'}"><span class="glyphicon glyphicon-sort-by-attributes-alt"></span></f:link.action></h5></td>
+						<td><h5>
+							<f:link.action action="list" arguments="{sort: 'asc', field: 'first_name'}"><span class="glyphicon glyphicon-sort-by-attributes"></span></f:link.action> Vorname <f:link.action action="list" arguments="{sort: 'desc', field: 'first_name'}"><span class="glyphicon glyphicon-sort-by-attributes-alt"></span></f:link.action></h5></td>
+						<td><h5>
+							<f:link.action action="list" arguments="{sort: 'asc', field: 'last_name'}"><span class="glyphicon glyphicon-sort-by-attributes"></span></f:link.action> Nachname <f:link.action action="list" arguments="{sort: 'desc', field: 'last_name'}"><span class="glyphicon glyphicon-sort-by-attributes-alt"></span></f:link.action></h5></td>
+						<td><h5>
+							<f:link.action action="list" arguments="{sort: 'asc', field: 'email'}"><span class="glyphicon glyphicon-sort-by-attributes"></span></f:link.action> E-mail <f:link.action action="list" arguments="{sort: 'desc', field: 'email'}"><span class="glyphicon glyphicon-sort-by-attributes-alt"></span></f:link.action></h5></td>
+
+					</tr>
+					<f:for each="{users}" as="user">
+						<f:if condition="{user.disable}">
+							<f:then>
+								<tr class="danger">
+							</f:then>
+							<f:else>
+								<tr>
+							</f:else>
+						</f:if>
+
+							<td>
+								<h6>{user.uid}</h5>
+							</td>
+						<td>
+							<h6>{user.disable}</h5>
+						</td>
+							<td><h6><f:format.date format="d.m.Y - H:i:s">{user.crdate}</f:format.date></h6></td>
+						<td>
+									<f:link.action action="show" arguments="{user:user}">
+										<h6>{user.username}</h6>
+									</f:link.action>
+						</td>
+						<td><h6>{user.firstName}</h6> </td><td><h6>{user.lastName}</h6></td>
+							<td>
+								<f:if condition="{user.email}">
+									<h6>{user.email}</h6>
+								</f:if>
+							</td>
+						</td>
+						</tr>
+					</f:for>
+				</table>
+			</f:then>
+			<f:else>
+				<div class="femanager_note">
+					<f:translate key="noRecordsFound" />
+				</div>
+			</f:else>
+		</f:if>
+	</div>
+</f:section>
+
+
+
+
+
+
+
+
+<f:section name="main_old">
+
+	<div class="femanager_list">
+		<f:flashMessages class="femanager_flashmessages" renderMode="div" />
+
+		<f:if condition="{users}">
+			<f:then>
+				<ul>
+					<f:for each="{users}" as="user">
+						<li>
+							<ul>
+								<li>
+									<f:translate key="tx_femanager_domain_model_user.username" />:
+									<f:link.action action="show" arguments="{user:user}">{user.username}</f:link.action>
+								</li>
+								<li>
+									<f:translate key="tx_femanager_domain_model_user.usergroup" />:
+									<f:for each="{user.usergroup}" as="usergroup" iteration="i">{usergroup.title}<f:if condition="{i.isLast}"><f:else>, </f:else></f:if></f:for>
+								</li>
+								<li>
+									<f:translate key="tx_femanager_domain_model_user.firstName" />:
+									{user.firstName}
+								</li>
+								<li>
+									<f:translate key="tx_femanager_domain_model_user.username" />:
+									{user.lastName}
+								</li>
+								<li>
+									<f:translate key="tx_femanager_domain_model_user.gender" />:
+									<f:if condition="{user.gender} == 0">
+										<f:then>
+											<f:translate key="tx_femanager_domain_model_user.gender.item0" />
+										</f:then>
+										<f:else>
+											<f:translate key="tx_femanager_domain_model_user.gender.item1" />
+										</f:else>
+									</f:if>
+								</li>
+								<li>
+									<f:translate key="tx_femanager_domain_model_user.dateOfBirth" />:
+									<f:format.date format="{f:translate(key:'tx_femanager_domain_model_user.dateFormat')}">{user.dateOfBirth}</f:format.date>
+								</li>
+								<li>
+									<f:translate key="tx_femanager_domain_model_user.address" />:
+									{user.address}
+								</li>
+								<li>
+									<f:translate key="tx_femanager_domain_model_user.zip" />:
+									{user.zip}
+								</li>
+								<li>
+									<f:translate key="tx_femanager_domain_model_user.city" />:
+									{user.city}
+								</li>
+								<li>
+									<f:translate key="tx_femanager_domain_model_user.country" />:
+									{user.country}
+								</li>
+							</ul>
+						</li>
+					</f:for>
+				</ul>
+			</f:then>
+			<f:else>
+				<div class="femanager_note">
+					<f:translate key="noRecordsFound" />
+				</div>
+			</f:else>
+		</f:if>
+	</div>
+</f:section>

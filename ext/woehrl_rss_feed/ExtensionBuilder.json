@@ -1,0 +1,97 @@
+{
+    "modules": [
+        {
+            "config": {
+                "position": [
+                    92,
+                    337
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": true,
+                    "_default1_show": false,
+                    "_default2_new_create": false,
+                    "_default3_edit_update": false,
+                    "_default4_delete": false,
+                    "customActions": [
+
+                    ]
+                },
+                "name": "Feed",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": false,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "292771198629"
+                },
+                "propertyGroup": {
+                    "properties": [
+
+                    ]
+                },
+                "relationGroup": {
+                    "relations": [
+
+                    ]
+                }
+            }
+        }
+    ],
+    "properties": {
+        "backendModules": [
+
+        ],
+        "description": "Einbindung TextilWirtschaft.de Newsticker in die Webseite",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 6.2\n",
+            "disableLocalization": true,
+            "disableVersioning": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "6.2",
+            "version": "6.0.0"
+        },
+        "extensionKey": "woehrl_rss_feed",
+        "name": "W\u00d6HRL RSS-Feed",
+        "originalExtensionKey": "woehrl_rss_feed",
+        "persons": [
+            {
+                "company": "Rudolf W\u00d6HRL AG",
+                "email": "Alexander.Fuchs@woehrl.de",
+                "name": "Alexander Fuchs",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "Feed =>list",
+                    "noncacheableActions": "",
+                    "switchableActions": ""
+                },
+                "key": "Pi1",
+                "name": "W\u00d6HRL RSS-Newsreadern"
+            }
+        ],
+        "vendorName": "WOEHRL"
+    },
+    "wires": [
+
+    ],
+    "log": {
+        "last_modified": "2015-04-20 05:39",
+        "extension_builder_version": "6.2.0",
+        "be_user": " (4)"
+    }
+}

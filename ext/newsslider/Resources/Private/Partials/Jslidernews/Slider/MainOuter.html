@@ -1,0 +1,25 @@
+{namespace n=Tx_News_ViewHelpers}
+<f:if condition="{settings.jslidernews.style} == 5">
+<f:then>
+  <div class="lof-main-outer" style="width:{settings.jslidernews.imgWidth}px; height:{settings.jslidernews.imgHeight}px;">
+   <div class="lof-previous" onclick="return false">Previous</div>
+    <div class="lof-main-wapper">
+  		<f:for each="{news}" as="newsItem">
+  			<n:excludeDisplayedNews newsItem="{newsItem}" />
+  			<f:render partial="Jslidernews/Slider/Item" arguments="{newsItem: newsItem, settings:settings}"/>
+  		</f:for>
+    </div>
+    <div class="lof-next" onclick="return false">Next</div>
+  </div>
+</f:then>
+<f:else>
+  <div class="lof-main-outer" style="width:{settings.jslidernews.width}px; height:{settings.jslidernews.height}px;">
+    <div class="lof-main-wapper">
+		<f:for each="{news}" as="newsItem">
+			<n:excludeDisplayedNews newsItem="{newsItem}" />
+			<f:render partial="Jslidernews/Slider/Item" arguments="{newsItem: newsItem, settings:settings}"/>
+		</f:for>
+    </div>
+  </div>
+</f:else>
+</f:if>

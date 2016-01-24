@@ -1,0 +1,195 @@
+<f:layout name="Default"/>
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+    <h1>Listing for Logs for PIN: {pin}</h1>
+
+    <f:flashMessages renderMode="div"/>
+    <f:form action="list" controller="Logs" method="post">
+        <div class="form-group">
+            <div class="col-sm-6">
+                <f:if condition="{pin}">
+                    <f:then>
+                        <input type="pin" name="tx_woehrlrrsupport_pi1[pin]" class="form-control" placeholder="{pin}">
+                    </f:then>
+                    <f:else>
+                        <input type="pin" name="tx_woehrlrrsupport_pi1[pin]" class="form-control" placeholder="BB PIN">
+                    </f:else>
+                </f:if>
+
+            </div>
+            <div class="col-sm-6">
+                <button type="submit" class="btn btn-default">Suchen</button>
+            </div>
+        </div>
+    </f:form>
+
+    <ul class="pagination">
+        <f:for each="{returnlogs}" as="seite" iteration="iterator">
+            <f:if condition="{iterator.isFirst}">
+
+                <f:if condition="{currentPage} == 1">
+                    <f:then>
+                        <li class="disabled">
+                            <f:link.action action="list"
+                                           additionalParams="{tx_woehrlrrsupport_pi1: {currentPage:'{currentPage}', pin:'{pin}',  page:'Previous'}}"
+                                           controller="Logs">
+                                <span aria-hidden="true">&laquo;</span></f:link.action>
+                        </li>
+                    </f:then>
+                    <f:else>
+                        <li>
+                            <f:link.action action="list"
+                                           additionalParams="{tx_woehrlrrsupport_pi1: {currentPage:'{currentPage}', pin:'{pin}', page:'Previous'}}"
+                                           controller="Logs">
+                                <span aria-hidden="true">&laquo;</span></f:link.action>
+                        </li>
+                    </f:else>
+                </f:if>
+            </f:if>
+
+
+            <f:if condition="{currentPage} == {iterator.cycle}">
+                <f:then>
+                    <li class="active">
+                        <f:link.action action="list"
+                                       additionalParams="{tx_woehrlrrsupport_pi1: {currentPage:'{iterator.cycle}', pin:'{pin}'}}"
+                                       controller="Logs">{iterator.cycle}
+                        </f:link.action>
+                    </li>
+                </f:then>
+
+                <f:else>
+                    <li>
+                        <f:link.action action="list"
+                                       additionalParams="{tx_woehrlrrsupport_pi1: {currentPage:'{iterator.cycle}', pin:'{pin}'}}"
+                                       controller="Logs">{iterator.cycle}
+                        </f:link.action>
+                    </li>
+                </f:else>
+            </f:if>
+
+
+            <f:if condition="{iterator.isLast}">
+
+
+                <f:if condition="{currentPage} == {iterator.total}">
+                    <f:then>
+                        <li class="disabled">
+                            <f:link.action action="list"
+                                           additionalParams="{tx_woehrlrrsupport_pi1: {currentPage:'{currentPage}',  pin:'{pin}',page:'Next'}}"
+                                           controller="Logs"><span aria-hidden="true">&raquo;</span></f:link.action>
+                        </li>
+                    </f:then>
+
+                    <f:else>
+
+                        <li>
+                            <f:link.action action="list"
+                                           additionalParams="{tx_woehrlrrsupport_pi1: {currentPage:'{currentPage}', pin:'{pin}', page:'Next'}}"
+                                           controller="Logs"><span aria-hidden="true">&raquo;</span></f:link.action>
+                        </li>
+                    </f:else>
+                </f:if>
+
+            </f:if>
+
+
+        </f:for>
+    </ul>
+
+    <f:for each="{logs}" as="log">
+        <ol>
+            <f:for each="{log}" as="lo">
+                <li>
+                    <b>{lo}</b>
+                </li>
+            </f:for>
+        </ol>
+        <hr/>
+    </f:for>
+
+    <ul class="pagination">
+        <f:for each="{returnlogs}" as="seite" iteration="iterator">
+            <f:if condition="{iterator.isFirst}">
+
+                <f:if condition="{currentPage} == 1">
+                    <f:then>
+                        <li class="disabled">
+                            <f:link.action action="list"
+                                           additionalParams="{tx_woehrlrrsupport_pi1: {currentPage:'{currentPage}',  pin:'{pin}', page:'Previous'}}"
+                                           controller="Logs">
+                                <span aria-hidden="true">&laquo;</span></f:link.action>
+                        </li>
+                    </f:then>
+                    <f:else>
+                        <li>
+                            <f:link.action action="list"
+                                           additionalParams="{tx_woehrlrrsupport_pi1: {currentPage:'{currentPage}',  pin:'{pin}', page:'Previous'}}"
+                                           controller="Logs">
+                                <span aria-hidden="true">&laquo;</span></f:link.action>
+                        </li>
+                    </f:else>
+                </f:if>
+            </f:if>
+
+
+            <f:if condition="{currentPage} == {iterator.cycle}">
+                <f:then>
+                    <li class="active">
+                        <f:link.action action="list"
+                                       additionalParams="{tx_woehrlrrsupport_pi1: {currentPage:'{iterator.cycle}'},  pin:'{pin}'}"
+                                       controller="Logs">{iterator.cycle}
+                        </f:link.action>
+                    </li>
+                </f:then>
+
+                <f:else>
+                    <li>
+                        <f:link.action action="list"
+                                       additionalParams="{tx_woehrlrrsupport_pi1: {currentPage:'{iterator.cycle}', pin:'{pin}'}}"
+                                       controller="Logs">{iterator.cycle}
+                        </f:link.action>
+                    </li>
+                </f:else>
+            </f:if>
+
+
+            <f:if condition="{iterator.isLast}">
+
+
+                <f:if condition="{currentPage} == {iterator.total}">
+                    <f:then>
+                        <li class="disabled">
+                            <f:link.action action="list"
+                                           additionalParams="{tx_woehrlrrsupport_pi1: {currentPage:'{currentPage}',  pin:'{pin}', page:'Next'}}"
+                                           controller="Logs"><span aria-hidden="true">&raquo;</span></f:link.action>
+                        </li>
+                    </f:then>
+
+                    <f:else>
+
+                        <li>
+                            <f:link.action action="list"
+                                           additionalParams="{tx_woehrlrrsupport_pi1: {currentPage:'{currentPage}',  pin:'{pin}', page:'Next'}}"
+                                           controller="Logs"><span aria-hidden="true">&raquo;</span></f:link.action>
+                        </li>
+                    </f:else>
+                </f:if>
+
+            </f:if>
+
+
+        </f:for>
+    </ul>
+</f:section>

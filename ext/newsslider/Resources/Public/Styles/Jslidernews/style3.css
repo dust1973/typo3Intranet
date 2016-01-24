@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+@import "default.css";
+
+/* CSS Sytle for slider-style 3 */
+
+.lof-slider_3 .lof-navigator-outer {
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:4;
+	overflow:hidden;
+}
+.lof-slider_3 .lof-navigator {
+	top:0;
+	padding:0;
+	margin:0;
+	position:absolute;
+	color:#FFF;
+  width: 100%;
+  z-index:9;
+}
+.lof-slider_3 .lof-navigator li {
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.lof-slider_3 .innerNavSelector {
+  color:FFF;  
+  position:absolute;
+}
+.lof-slider_3 .alpha {
+  background-color:#222;
+  opacity:0.7;
+  border:2px solid #000;
+  border-left:none;
+  -moz-border-radius:0 15px 15px 0;
+  -webkit-border-top-right-radius:15px;
+  -webkit-border-bottom-right-radius:15px;
+  border-top-right-radius:15px;
+  border-bottom-right-radius:15px; 
+}
+.lof-slider_3 .active .alpha {
+  opacity:0.9;
+}
+.lof-slider_3 .lof-navigator li img {
+	border:#666 solid 1px;
+  float: left;
+  padding: 3px;
+  margin-right:10px;
+}
+.lof-slider_3 .navText h3, .lof-slider_2 .navText p {
+  padding:0;
+  margin:0;
+  color:white;
+}
+.lof-slider .button-control {
+  right: 10px;
+}
+.lof-slider_3 .navText {
+/*  float:left;  */
+}

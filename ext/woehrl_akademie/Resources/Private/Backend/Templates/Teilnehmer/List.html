@@ -1,0 +1,57 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+<h1>Listing for Teilnehmer</h1>
+
+<f:flashMessages />
+
+<table  class="tx_woehrlakademie" >
+	<tr>
+		<th><f:translate key="tx_woehrlakademie_domain_model_teilnehmer.anrede" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_teilnehmer.vorname" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_teilnehmer.nachname" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_teilnehmer.filiale" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_teilnehmer.position" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_teilnehmer.personal_nr" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_teilnehmer.kostenstelle" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_teilnehmer.email" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_teilnehmer.telefon" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_teilnehmer.genehmigt" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_teilnehmer.emaildesvorgesezten" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{teilnehmers}" as="teilnehmer">
+		<tr>
+			<td><f:link.action action="show" arguments="{teilnehmer : teilnehmer}"> {teilnehmer.anrede}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnehmer : teilnehmer}"> {teilnehmer.vorname}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnehmer : teilnehmer}"> {teilnehmer.nachname}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnehmer : teilnehmer}"> {teilnehmer.filiale}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnehmer : teilnehmer}"> {teilnehmer.position}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnehmer : teilnehmer}"> {teilnehmer.personalNr}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnehmer : teilnehmer}"> {teilnehmer.kostenstelle}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnehmer : teilnehmer}"> {teilnehmer.email}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnehmer : teilnehmer}"> {teilnehmer.telefon}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnehmer : teilnehmer}"> {teilnehmer.genehmigt}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{teilnehmer : teilnehmer}"> {teilnehmer.emaildesvorgesezten}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{teilnehmer : teilnehmer}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{teilnehmer : teilnehmer}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Teilnehmer</f:link.action>
+</f:section>

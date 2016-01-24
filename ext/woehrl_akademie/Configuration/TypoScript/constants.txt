@@ -1,0 +1,21 @@
+
+plugin.tx_woehrlakademie {
+	view {
+		# cat=plugin.tx_woehrlakademie/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:woehrl_akademie/Resources/Private/Templates/
+		# cat=plugin.tx_woehrlakademie/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:woehrl_akademie/Resources/Private/Partials/
+		# cat=plugin.tx_woehrlakademie/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:woehrl_akademie/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_woehrlakademie//a; type=string; label=Default storage PID
+		storagePid =
+	}
+	# cat=plugin.tx_woehrlakademie/links/b; type=int+; label=Single PID
+	singlePid =
+	displayList {
+		#cat=plugin.tx_woehrlakademie/file; type=string; label=Default image:
+		imageNotFound = EXT:woehrl_akademie/Resources/Public/Images/image_not_found.jpg
+	}
+}

@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+@import "default.css";
+
+/* CSS Sytle for slider-style 1 */
+
+.lof-slider_1 .lof-horizontal {
+  position:absolute; 
+  bottom:10px; 
+  right:10px; 
+  padding:0;
+}
+.lof-slider_1 .lof-navigator-wapper {
+  z-index:4;
+}
+.lof-slider_1 .lof-navigator-outer {
+	position:relative;
+	overflow:hidden;
+	float:left
+}
+.lof-slider_1 .lof-navigator {
+	top:0;
+	padding:0;
+	margin:0;
+	position:absolute;
+}
+.lof-slider_1 .lof-navigator li {
+	cursor:pointer;
+	list-style:none;
+	padding:0;
+	margin:0;
+	overflow:hidden;
+	float:left;
+	display:block;
+	text-align:center;
+}
+.lof-slider_1 .lof-navigator li img {border:#666 solid 3px;}
+.lof-slider_1 .lof-navigator li.active img, .lof-slider_1 .lof-navigator li:hover img {border:#A8A8A8 solid 3px;}
+.lof-slider_1 .lof-navigator-wapper .lof-next, .lof-slider_1 .lof-navigator-wapper .lof-previous {display:block; cursor:pointer;}
+
+.lof-slider_1 .lof-navigator-wapper .lof-next {
+float:left; 
+text-indent:-9999px; 
+margin-right:5px; 
+background:url('images/arrow-r.png') no-repeat right center;
+}
+.lof-slider_1 .lof-navigator-wapper .lof-previous {
+float:left; 
+text-indent:-9999px; 
+margin-left:5px; 
+background:url('images/arrow-l.png') no-repeat left center;
+}
+.lof-slider_1 .alpha {
+  background-color:#222;
+  opacity:0.7;
+  position:absolute;  
+  -moz-box-shadow:0 0 3px #333;
+	-webkit-box-shadow:0 0 3px #333;
+  box-shadow: 0 0 3px #333;  
+  bottom:-5px;
+  left:-5px;
+  padding:5px;
+  -moz-box-sizing: content-box;
+}
+/* vertical navigation */
+.lof-slider_1 .lof-vertical {position:absolute; bottom:10px; right:10px;}
+.lof-slider_1 .lof-vertical .lof-navigator-outer {clear: both; float: none !important;}
+.lof-slider_1 .lof-vertical .lof-next {
+  background: url('images/arrow-d.png') no-repeat scroll center center transparent;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+}
+.lof-slider_1 .lof-vertical .lof-previous {
+  background: url('images/arrow-u.png') no-repeat scroll center center transparent;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+}
+.lof-slider .button-control {
+  right: 10px;
+}

@@ -1,0 +1,172 @@
+<f:layout name="Default" />
+
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+{namespace tx=Tx_WoehrlSeminare_ViewHelpers_Condition}
+<f:section name="main">
+
+    {namespace se=Tx_WoehrlSeminare_ViewHelpers}
+    <f:comment>
+    <f:debug>{_all}</f:debug>
+        </f:comment>
+    <div class="woehrl-seminare-show">
+        <f:if condition="{event}">
+            <f:then>
+                <h3>{event.title}
+                    <f:if condition="{event.rating}">
+                        <tx:for start="0" until="{event.rating}"  ></tx:for>
+                    </f:if>
+                </h3>
+                <f:if condition="{event.discipline}">
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Kompetenzfelder</th>
+                            <th>Kompetenzkriterien</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                <f:for each="{event.discipline}" as="discipline">
+                                <li>{discipline.name}</li>
+                            </f:for>
+                                </ul>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <hr>
+                </f:if>
+
+                <p><f:format.html>{event.description}</f:format.html></p>
+
+<hr>
+
+                <table class="table small table-bordered">
+                    <tr>
+                        <th>Zielgruppe</th>
+                        <th>Termin</th>
+                        <th>Ort</th>
+                        <th>Preis</th>
+                        <th>freie Plätze</th>
+                    </tr>
+                    <tr>
+                        <td>
+
+                                <f:for each="{event.zielgruppen}" as="zielgruppe">
+                                    {zielgruppe.art}<br>
+                                </f:for>
+
+                        </td>
+                        <td><f:render partial="Event/DateFromTo" arguments="{event : event}" /></td>
+                        <td>     {event.location.name}
+                            <f:if condition="{event.location.link}">
+                                <f:then>
+                                    <f:if condition="<se:link.islocal link='{event.location.link}' />">
+                                        <f:then>
+                                            <f:link.page pageUid="{event.location.link}">{event.location.name}</f:link.page>
+                                        </f:then>
+                                        <f:else>
+                                            <f:link.external uri="{event.location.link}">{event.location.name}</f:link.external>
+                                        </f:else>
+                                    </f:if>
+                                </f:then>
+                                <f:else>
+
+                                </f:else>
+                            </f:if>
+                            <f:format.html>{event.location.description}</f:format.html></td>
+                        <td><p>Preis: {event.preis} €<br> (inkl. Verpflegung, ohne ÜN)</p></td>
+                        <td>                <p>	<f:if condition="<se:condition.IsSubscriptionAllowed event='{event}' />">
+                            <f:then>
+                                Noch:
+                                <f:if condition="<se:format.freePlacesLeft event='{event}' /> == 1">
+                                    <f:then>
+                                        <f:translate key="tx_woehrlseminare_domain_model_event.oneFreePlace" />
+                                    </f:then>
+                                    <f:else>
+                                        <se:format.freePlacesLeft event="{event}" />
+                                        <f:translate key="tx_woehrlseminare_domain_model_event.freeplaces" />
+                                    </f:else>
+                                </f:if>
+                            </f:then>
+                            <f:else>
+                                <f:if condition="{event.maxSubscriber} > 0">
+                                    <f:then>
+                                        <f:if condition="{event.maxSubscriber} <= <f:count subject='{event.subscribers}' />">
+                                            <f:then>Die maximale Teilnehmerzahl von {event.maxSubscriber} ist erreicht.</f:then>
+                                            <f:else>Es ist keine Anmeldung mehr möglich.</f:else>
+                                        </f:if>
+                                    </f:then>
+                                    <f:else>Keine Anmeldung erforderlich.</f:else>
+                                </f:if>
+                            </f:else>
+                        </f:if></p></td>
+                    </tr>
+                </table>
+                <hr>
+
+
+
+
+                <f:translate key="tx_woehrlseminare_domain_model_contact" />
+
+                <f:if condition="{event.contact}">
+
+                    <div class="location page-header">
+                        <h3>Dozent: {event.contact.name}</h3>
+                        <div class="clearfix">
+                        <f:if condition="{event.contact.photo}">
+                            <f:then>
+                                <p><f:image class="img-thumbnail pull-left" src="/uploads/tx_woehrlseminare/{event.contact.photo}" alt="" treatIdAsReference="TRUE" style="margin-right: 40px; " /></p>
+                            </f:then>
+                        </f:if>
+
+                        <div><f:format.html>{event.contact.description}</f:format.html></div>
+                        </div>
+                    </div>
+
+
+                </f:if>
+
+
+
+
+
+                <div class="subscription">
+                    <f:if condition="<se:condition.IsSubscriptionAllowed event='{event}' />">
+                        <f:then>
+                            <f:link.action action="new" controller="Subscriber" pageUid="{settings.pidSubscribeForm}"  arguments="{event : event}" class="btn btn-primary">
+                                <f:translate key="tx_woehrlseminare_domain_model_event.subscribe" /></f:link.action>
+                        </f:then>
+                        <f:else>
+                            <f:if condition="{event.maxSubscriber} > 0">
+                                <f:then>
+                                    <f:if condition="{event.maxSubscriber} <= <f:count subject='{event.subscribers}' />">
+                                        <f:then>Die maximale Teilnehmerzahl von {event.maxSubscriber} ist erreicht.</f:then>
+                                        <f:else>Es ist keine Anmeldung mehr möglich.</f:else>
+                                    </f:if>
+                                </f:then>
+                                <f:else>Keine Anmeldung erforderlich.</f:else>
+                            </f:if>
+                        </f:else>
+                    </f:if>
+                </div>
+
+
+            </f:then>
+            <f:else>
+                <p>Leider konnten wir die gesuchte Veranstaltung nicht finden.</p>
+            </f:else>
+        </f:if>
+    </div>
+
+    <p><br /><f:link.action action="list" pageUid="{settings.pidListing}">Zurück zur Übersicht</f:link.action></p>
+</f:section>

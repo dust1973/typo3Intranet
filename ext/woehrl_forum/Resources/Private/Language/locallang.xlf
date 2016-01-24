@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-10-09T11:57:21Z" product-name="woehrl_forum">
+		<header/>
+		<body>
+			<trans-unit id="tx_woehrlforum_domain_model_eintrag">
+				<source>Eintrag</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlforum_domain_model_eintrag.autor">
+				<source>Autor</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlforum_domain_model_eintrag.betreff">
+				<source>Betreff</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlforum_domain_model_eintrag.i_p_adresse">
+				<source>I P Adresse</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlforum_domain_model_eintrag.zuletztbearbeitet">
+				<source>Zuletztbearbeitet</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlforum_domain_model_eintrag.anzahlder_bearbeitungen">
+				<source>Anzahlder Bearbeitungen</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlforum_domain_model_eintrag.nachricht">
+				<source>Nachricht</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlforum_domain_model_eintrag.kategorie">
+				<source>Kategorie</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlforum_domain_model_eintrag.thema">
+				<source>Thema</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlforum_domain_model_kategorie">
+				<source>Kategorie</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlforum_domain_model_kategorie.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlforum_domain_model_kategorie.beschreibung">
+				<source>Beschreibung</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlforum_domain_model_kategorie.gruppe">
+				<source>Gruppe</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlforum_domain_model_gruppe">
+				<source>Gruppe</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlforum_domain_model_gruppe.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlforum_domain_model_gruppe.beschreibung">
+				<source>Beschreibung</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlforum_domain_model_gruppe.frontend_benutzer">
+				<source>Frontend Benutzer</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlforum_domain_model_gruppe.frontend_gruppen">
+				<source>Frontend Gruppen</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlforum_domain_model_theme">
+				<source>Theme</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlforum_domain_model_theme.geschlossen">
+				<source>Geschlossen</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlforum_domain_model_theme.betreff">
+				<source>Betreff</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlforum_domain_model_theme.autor">
+				<source>Autor</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlforum_domain_model_theme.erstellt">
+				<source>Erstellt</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlforum_domain_model_theme.wieoftwurdedas_themaangesehen">
+				<source>Wieoftwurdedas Themaangesehen</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlforum_domain_model_theme.anzahlder_anworten">
+				<source>Anzahlder Anworten</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlforum_domain_model_theme.erste_nachricht">
+				<source>Erste Nachricht</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlforum_domain_model_theme.letzter_nachricht">
+				<source>Letzter Nachricht</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlforum_domain_model_theme.kategorie">
+				<source>Kategorie</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

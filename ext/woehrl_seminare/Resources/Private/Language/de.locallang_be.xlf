@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2014-07-18T07:52:44Z">
+		<header>
+			<generator>LFEditor</generator>
+		</header>
+		<body>
+		<trans-unit id="flexforms.categories_recursive" approved="yes" xml:space="preserve">
+			<source>Include Child Categories</source>
+			<target>Untergeordnete Kategorien einschließen</target>
+		</trans-unit>
+		<trans-unit id="flexforms.discipline_recursive" approved="yes" xml:space="preserve">
+			<source>Include Child Disciplines</source>
+			<target>Untergeordnete Kompetenz einschließen</target>
+		</trans-unit>
+		<trans-unit id="flexforms.event_ordering" approved="yes" xml:space="preserve">
+			<source>Event Ordering</source>
+			<target>Sortierung der Liste</target>
+		</trans-unit>
+		<trans-unit id="flexforms.eventgeniusbar_title" approved="yes" xml:space="preserve">
+			<source>Knowledge Bar View Settings</source>
+			<target>Einstellungen Wissensbar</target>
+		</trans-unit>
+		<trans-unit id="flexforms.eventlist_title" approved="yes" xml:space="preserve">
+			<source>List and Single View Settings</source>
+			<target>Einstellungen Listen- und Einzelansicht</target>
+		</trans-unit>
+		<trans-unit id="flexforms.eventsubscribe_title" approved="yes" xml:space="preserve">
+			<source>Registration View Settings</source>
+			<target>Einstellungen Anmeldung</target>
+		</trans-unit>
+		<trans-unit id="flexforms.eventuserpanel_title" approved="yes" xml:space="preserve">
+			<source>Registration Userpanel Settings</source>
+			<target>Einstellungen Meine Veranstaltungen</target>
+		</trans-unit>
+		<trans-unit id="flexforms.knowledgebar_view" approved="yes" xml:space="preserve">
+			<source>Knowledge Bar View</source>
+			<target>Wissensbar</target>
+		</trans-unit>
+		<trans-unit id="flexforms.list_view" approved="yes" xml:space="preserve">
+			<source>List View</source>
+			<target>Listenansicht</target>
+		</trans-unit>
+		<trans-unit id="flexforms.ordering_ascending" approved="yes" xml:space="preserve">
+			<source>Ascending</source>
+			<target>Aufsteigend</target>
+		</trans-unit>
+		<trans-unit id="flexforms.ordering_descending" approved="yes" xml:space="preserve">
+			<source>Descending</source>
+			<target>Absteigend</target>
+		</trans-unit>
+		<trans-unit id="flexforms.page_list_view" approved="yes" xml:space="preserve">
+			<source>Page of List View</source>
+			<target>Seite mit Listenansicht</target>
+		</trans-unit>
+		<trans-unit id="flexforms.page_single_view" approved="yes" xml:space="preserve">
+			<source>Page of Single View</source>
+			<target>Seite mit Einzelansicht</target>
+		</trans-unit>
+		<trans-unit id="flexforms.page_subscribe" approved="yes" xml:space="preserve">
+			<source>Page of Subscribe Form</source>
+			<target>Seite mit Anmeldeformular</target>
+		</trans-unit>
+		<trans-unit id="flexforms.page_unsubscribe" approved="yes" xml:space="preserve">
+			<source>Page of Unsubscribe Form</source>
+			<target>Seite mit Abmeldeformular</target>
+		</trans-unit>
+		<trans-unit id="flexforms.select_function" approved="yes" xml:space="preserve">
+			<source>Select Function</source>
+			<target>Funktion</target>
+		</trans-unit>
+		<trans-unit id="flexforms.show_categories" approved="yes" xml:space="preserve">
+			<source>Show Selected Categories</source>
+			<target>Nur gewählte Kategorien anzeigen</target>
+		</trans-unit>
+		<trans-unit id="flexforms.show_categories_start" approved="yes" xml:space="preserve">
+			<source>Select Root Category</source>
+			<target>Wurzel-Kategorie wählen</target>
+		</trans-unit>
+		<trans-unit id="flexforms.show_contacts" approved="yes" xml:space="preserve">
+			<source>Show Only Selected Contacts</source>
+			<target>Nur gewählte Kontakte anzeigen</target>
+		</trans-unit>
+		<trans-unit id="flexforms.show_discipline" approved="yes" xml:space="preserve">
+			<source>Show Only Selected Disciplines</source>
+			<target>Nur gewählte Kompetenzen anzeigen</target>
+		</trans-unit>
+		<trans-unit id="flexforms.show_past_events" approved="yes" xml:space="preserve">
+			<source>Show Past Events</source>
+			<target>Zeige vergangene Veranstaltungen</target>
+		</trans-unit>
+		<trans-unit id="flexforms.single_view" approved="yes" xml:space="preserve">
+			<source>Single View</source>
+			<target>Einzelansicht</target>
+		</trans-unit>
+		<trans-unit id="flexforms.subscribe_view" approved="yes" xml:space="preserve">
+			<source>Subscribe View</source>
+			<target>Anmelden</target>
+		</trans-unit>
+		<trans-unit id="flexforms.unsubscribe_view" approved="yes" xml:space="preserve">
+			<source>Unsubscribe View</source>
+			<target>Abmelden</target>
+		</trans-unit>
+		<trans-unit id="flexforms.userpanel_view" approved="yes" xml:space="preserve">
+			<source>Userpanel View</source>
+			<target>Meine Veranstaltungen</target>
+		</trans-unit>
+		<trans-unit id="plugin.Eventgeniusbar" approved="yes" xml:space="preserve">
+			<source>WÖHRL Akademie | Events: Genius Bar</source>
+			<target>WÖHRL Akademie | Veranstaltungen: Wissensbar</target>
+		</trans-unit>
+		<trans-unit id="plugin.Eventlist" approved="yes" xml:space="preserve">
+			<source>WÖHRL Akademie | Events: Listing</source>
+			<target>WÖHRL Akademie | Veranstaltungen: Listenansicht</target>
+		</trans-unit>
+		<trans-unit id="plugin.Eventsubscribe" approved="yes" xml:space="preserve">
+			<source>WÖHRL Akademie | Events: Registration</source>
+			<target>WÖHRL Akademie | Veranstaltungen: Registrierung</target>
+		</trans-unit>
+		<trans-unit id="plugin.Eventuserpanel" approved="yes" xml:space="preserve">
+			<source>WÖHRL Akademie | Events: User Panel</source>
+			<target>WÖHRL Akademie | Veranstaltungen: Meine Veranstaltung</target>
+		</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,100 @@
+<f:layout name="Default"/>
+
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+    <h3>
+        <f:link.action action="list" class="btn btn-default" controller="Logs" arguments="{settingss : settingss}">Logs
+            ansehen
+        </f:link.action>
+        |
+        <f:link.action action="show" class="btn btn-default" controller="Settings" arguments="{settingss : settingss}">
+            Settings ansehen/&auml;ndern
+        </f:link.action>
+    </h3>
+
+    <f:form class="form-inline" action="edit" controller="Settings">
+        <f:if condition="{settings.Pin == 1}">
+            <div class="row">
+                <h2> Standard Setting:</h2>
+            </div>
+            <div class="clearfix"><hr />
+            <div class="row">
+                <div class="form-group col-sm-12">
+                    <label for="Debug" class="control-label col-sm-2">Debug =>  </label>
+                    <f:form.textfield name="Debug" class="form-control" placeholder="{settings.Debug}" value="{settings.Debug}"/>
+                </div>
+            </div>
+            <div class="clearfix"><hr />
+            <div class="row">
+                <div class="form-group col-sm-12">
+                    <label for="DebugLevel" class="control-label col-sm-2">DebugLevel =></label>
+                        <f:form.textfield name="DebugLevel" placeholder="{settings.DebugLevel}" class="form-control"
+                                          value="{settings.DebugLevel}"/>
+
+                </div>
+            </div>
+                <div class="clearfix"><hr />
+            <div class="row">
+                <div class="form-group col-sm-12">
+                    <label for="Zeitstempel" class="control-label col-sm-2">Zeitstempel =></label>
+                    {settings.Zeitstempel}
+                </div>
+            </div>
+                    <div class="clearfix"><hr />
+            <div class="row">
+                <div class="form-group col-sm-12">
+                    <label for="Url_startpage" class="control-label col-sm-2">Url_startpage =></label>
+                        <f:form.textfield name="settings.Url_startpage" class="form-control" style="width:250px;" value="{settings.Url_startpage}"/>
+
+                </div>
+            </div>
+                        <div class="clearfix"><hr />
+            <div class="row">
+                <div class="form-group col-sm-12">
+                    <label class="control-label col-sm-2">Url_helppage => </label>
+                        <f:form.textfield name="settings.Url_helppage"  class="form-control" style="width:250px;" value="{settings.Url_helppage}"/>
+
+                </div>
+            </div>
+                            <div class="clearfix"><hr />
+            <div class="row">
+                <div class="form-group col-sm-12">
+                    <label class="control-label col-sm-2">Scanner =></label> <f:form.textfield name="Scanner"  style="width:250px;" class="form-control" value="{settings.Scanner}"/>
+                </div>
+            </div>
+                                <div class="clearfix"><hr />
+            <div class="row">
+                <div class="form-group col-sm-12">
+                    <label class="control-label col-sm-2">Drucker => </label><f:form.textfield name="Drucker"  style="width:250px;" class="form-control" value="{settings.Drucker}"/>
+                </div>
+            </div>
+                                    <div class="clearfix"><hr />
+            <div class="row">
+                <div class="form-group col-sm-12">
+                    <label class="control-label col-sm-2">Type => </label>{settings.Type}
+                </div>
+            </div>
+                                        <div class="clearfix"><hr />
+                                            <div class="row">
+                                                <div class="form-group col-sm-12">
+                                                    <f:form.submit class="btn btn-default" value="Aenderungen speichern" />
+                                                </div>
+                                            </div>
+
+        </f:if>
+    </f:form>
+
+    <f:flashMessages renderMode="div"/>
+    <div class="clearfix"><hr />
+        <div class="clearfix">
+</f:section>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-07-15T17:27:29Z" product-name="woehrl_loginstatus">
+		<header/>
+		<body>
+			<trans-unit id="tx_woehrlloginstatus_domain_model_status">
+				<source>Status</source>
+			</trans-unit>
+			<trans-unit id="tx_woehrlloginstatus_domain_model_status.user">
+				<source>User</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

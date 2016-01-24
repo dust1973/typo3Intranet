@@ -1,0 +1,50 @@
+# cat=basic//1; type=user[EXT:ig_ldap_sso_auth/Classes/Em/ConfigurationHelper.php:Causal\IgLdapSsoAuth\Em\ConfigurationHelper->checkConfiguration]; label=LLL:EXT:ig_ldap_sso_auth/Resources/Private/Language/locallang_db.xlf:settings.checkConfiguration
+checkConfiguration=0
+
+# cat=basic//2; type=boolean; label=LLL:EXT:ig_ldap_sso_auth/Resources/Private/Language/locallang_db.xlf:settings.throwExceptionAtLogin
+throwExceptionAtLogin = 1
+
+# cat=basic//3; type=boolean; label=LLL:EXT:ig_ldap_sso_auth/Resources/Private/Language/locallang_db.xlf:settings.forceLowerCaseUsername
+forceLowerCaseUsername = 0
+
+# cat=backend/enable/1; type=boolean; label=LLL:EXT:ig_ldap_sso_auth/Resources/Private/Language/locallang_db.xlf:settings.enableBELDAPAuthentication
+enableBELDAPAuthentication = 0
+
+# cat=backend/enable; type=boolean; label=LLL:EXT:ig_ldap_sso_auth/Resources/Private/Language/locallang_db.xlf:settings.TYPO3BEGroupExist
+TYPO3BEGroupExist = 0
+
+# cat=backend/enable; type=boolean; label=LLL:EXT:ig_ldap_sso_auth/Resources/Private/Language/locallang_db.xlf:settings.TYPO3BEUserExist
+TYPO3BEUserExist = 0
+
+# cat=backend/enable; type=boolean; label=LLL:EXT:ig_ldap_sso_auth/Resources/Private/Language/locallang_db.xlf:settings.BEfailsafe
+BEfailsafe = 0
+
+# cat=backend/enable; type=boolean; label=LLL:EXT:ig_ldap_sso_auth/Resources/Private/Language/locallang_db.xlf:settings.TYPO3BEGroupsNotSynchronize
+TYPO3BEGroupsNotSynchronize = 0
+
+# cat=backend/enable; type=boolean; label=LLL:EXT:ig_ldap_sso_auth/Resources/Private/Language/locallang_db.xlf:settings.keepBEGroups
+keepBEGroups = 0
+
+# cat=frontend/enable/1; type=boolean; label=LLL:EXT:ig_ldap_sso_auth/Resources/Private/Language/locallang_db.xlf:settings.enableFELDAPAuthentication
+enableFELDAPAuthentication = 0
+
+# cat=frontend/enable; type=boolean; label=LLL:EXT:ig_ldap_sso_auth/Resources/Private/Language/locallang_db.xlf:settings.TYPO3FEDeleteUserIfNoLDAPGroups
+TYPO3FEDeleteUserIfNoLDAPGroups = 0
+
+# cat=frontend/enable; type=boolean; label=LLL:EXT:ig_ldap_sso_auth/Resources/Private/Language/locallang_db.xlf:settings.TYPO3FEDeleteUserIfNoTYPO3Groups
+TYPO3FEDeleteUserIfNoTYPO3Groups = 0
+
+# cat=frontend/enable; type=boolean; label=LLL:EXT:ig_ldap_sso_auth/Resources/Private/Language/locallang_db.xlf:settings.TYPO3FEGroupExist
+TYPO3FEGroupExist = 0
+
+# cat=frontend/enable; type=boolean; label=LLL:EXT:ig_ldap_sso_auth/Resources/Private/Language/locallang_db.xlf:settings.TYPO3FEUserExist
+TYPO3FEUserExist = 0
+
+# cat=frontend/enable; type=boolean; label=LLL:EXT:ig_ldap_sso_auth/Resources/Private/Language/locallang_db.xlf:settings.TYPO3FEGroupsNotSynchronize
+TYPO3FEGroupsNotSynchronize = 0
+
+# cat=frontend/enable; type=boolean; label=LLL:EXT:ig_ldap_sso_auth/Resources/Private/Language/locallang_db.xlf:settings.keepFEGroups
+keepFEGroups = 0
+
+# cat=frontend/enable; type=boolean; label=LLL:EXT:ig_ldap_sso_auth/Resources/Private/Language/locallang_db.xlf:settings.enableFESSO
+enableFESSO = 0

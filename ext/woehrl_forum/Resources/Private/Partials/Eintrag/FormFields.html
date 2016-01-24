@@ -1,0 +1,25 @@
+
+<label for="autor">
+	<f:translate key="tx_woehrlforum_domain_model_eintrag.autor" />
+</label><br />
+	<f:form.textfield property="autor" /><br />
+<label for="betreff">
+	<f:translate key="tx_woehrlforum_domain_model_eintrag.betreff" />
+</label><br />
+	<f:form.textfield property="betreff" /><br />
+<label for="iPAdresse">
+	<f:translate key="tx_woehrlforum_domain_model_eintrag.i_p_adresse" />
+</label><br />
+	<f:form.textfield property="iPAdresse" /><br />
+<label for="zuletztbearbeitet">
+	<f:translate key="tx_woehrlforum_domain_model_eintrag.zuletztbearbeitet" />
+</label><br />
+	<f:form.textfield property="zuletztbearbeitet"  value="{eintrag.zuletztbearbeitet->f:format.date()}" /><br />
+<label for="anzahlderBearbeitungen">
+	<f:translate key="tx_woehrlforum_domain_model_eintrag.anzahlder_bearbeitungen" />
+</label><br />
+	<f:form.textfield property="anzahlderBearbeitungen" /><br />
+<label for="nachricht">
+	<f:translate key="tx_woehrlforum_domain_model_eintrag.nachricht" />
+</label><br />
+	<f:form.textarea property="nachricht" cols="40" rows="15" /><br />

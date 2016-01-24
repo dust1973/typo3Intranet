@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for backend of newsslider</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="flexform.sheetTitle">Slider</label>
+			<label index="flexform.style">Slider Style:</label>
+			<label index="flexform.style.I.0">Style 1</label>
+			<label index="flexform.style.I.1">Style 2</label>
+			<label index="flexform.style.I.2">Style 3</label>
+			<label index="flexform.style.I.3">Style 4</label>
+			<label index="flexform.style.I.4">Style 5</label>
+
+			<label index="flexform.style.II.0">Basic Slider</label>
+			<label index="flexform.style.II.1">Slider w/thumbnail controlNav pattern</label>
+			<label index="flexform.style.II.2">Slider w/thumbnail slider</label>
+			<label index="flexform.style.II.3">Basic Carousel</label>
+			<label index="flexform.style.II.4">Carousel with min and max ranges</label>
+
+			<label index="flexform.width">Slider Width in px:</label>
+			<label index="flexform.height">Slider Height in px:</label>
+			<label index="flexform.auto">Automatic Animation:</label>
+			<label index="flexform.pause">Pause:</label>
+			<label index="flexform.pause.I.0">none</label>
+			<label index="flexform.pause.I.1">Pause on hover</label>
+			<label index="flexform.pause.I.2">Pause-Button</label>
+			<label index="flexform.progressbar">Progressbar:</label>
+			<label index="flexform.pagination">1,2,3... navigation:</label>
+			<label index="flexform.imageLink">Image as Link:</label>
+			<label index="flexform.css">CSS-File:</label>
+			<label index="author">Author: %s</label>
+			<label index="readmore">[read more]</label>
+			<label index="flexform.maxWidth">max. Slider-Width in px:</label>
+			<label index="flexform.maxHeight">max. Slider-Height in px:</label>
+ 			<label index="flexform.directionNav">Previous/next navigation:</label>
+			<label index="flexform.controlNav">1,2,3... navigation:</label>
+			<label index="flexform.allowVideo">videos in the slider:</label>
+			<label index="flexform.theme">Theme:</label>
+			<label index="flexform.effect">Effect:</label>
+
+			<label index="flexform.thumbHeight">Thumbnail Height in px:</label>
+			<label index="flexform.thumbNumber">Number of Thumbnails that should be visible:</label>
+			<label index="flexform.animationType">Animation Type:</label>
+			<label index="flexform.minItems">Minimum number of carousel items that should be visible:</label>
+			<label index="flexform.maxItems">Maxmimum number of carousel items that should be visible:</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="flexform.sheetTitle">Slider</label>
+			<label index="flexform.style">Slider Stil:</label>
+			<label index="flexform.style.I.0">Stil 1</label>
+			<label index="flexform.style.I.1">Stil 2</label>
+			<label index="flexform.style.I.2">Stil 3</label>
+			<label index="flexform.style.I.3">Stil 4</label>
+			<label index="flexform.style.I.4">Stil 5</label>
+			<label index="flexform.width">Slider-Breite in px:</label>
+			<label index="flexform.height">Slider-Höhe in px:</label>
+			<label index="flexform.auto">Automatische Animation:</label>
+			<label index="flexform.pause">Pause:</label>
+			<label index="flexform.pause.I.0">nein</label>
+			<label index="flexform.pause.I.1">Pause bei hover</label>
+			<label index="flexform.pause.I.2">Pause-Button</label>
+			<label index="flexform.progressbar">Progressbar:</label>
+			<label index="flexform.pagination">1,2,3... Navigation:</label>
+			<label index="flexform.imageLink">Bild als Link:</label>
+			<label index="flexform.css">CSS-Datei:</label>
+			<label index="author">Autor: %s</label>
+			<label index="readmore">[weiterlesen]</label>
+			<label index="flexform.maxWidth">max. Slider-Breite in px:</label>
+			<label index="flexform.maxHeight">max. Slider-Höhe in px:</label>
+			<label index="flexform.directionNav">Vor/nächste Navigation:</label>
+			<label index="flexform.controlNav">1,2,3... Navigation:</label>
+			<label index="flexform.allowVideo">Videos im Slider:</label>
+			<label index="flexform.theme">Thema:</label>
+			<label index="flexform.effect">Effekt:</label>
+
+			<label index="flexform.thumbHeight">Thumbnail Höhe in px:</label>
+			<label index="flexform.thumbNumber">Anzahl der Thumbnails, die sichtbar sein sollte:</label>
+			<label index="flexform.animationType">Animation Typ:</label>
+			<label index="flexform.minItems">Mindestanzahl der Elemente, die im Carousel sichtbar sein sollen:</label>
+			<label index="flexform.maxItems">Maxmimum Anzahl der Elemente, die im Carousel sichtbar sein sollen:</label>
+		</languageKey>
+	</data>
+</T3locallang>

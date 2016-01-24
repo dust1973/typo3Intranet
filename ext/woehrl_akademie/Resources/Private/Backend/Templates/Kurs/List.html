@@ -1,0 +1,63 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+<h1>Listing for Kurs</h1>
+
+<f:flashMessages />
+
+<table  class="tx_woehrlakademie" >
+	<tr>
+		<th><f:translate key="tx_woehrlakademie_domain_model_kurs.kursnummer" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_kurs.title" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_kurs.kursbeginn" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_kurs.kursende" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_kurs.registrierungsbeginn" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_kurs.registrierungsende" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_kurs.subtitle" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_kurs.bodytext" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_kurs.max_teilnehmer_anzahl" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_kurs.preis" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_kurs.preview_image" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_kurs.files" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_kurs.documents" /></th>
+		<th><f:translate key="tx_woehrlakademie_domain_model_kurs.kurs_bewertung" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{kurss}" as="kurs">
+		<tr>
+			<td><f:link.action action="show" arguments="{kurs : kurs}"> {kurs.kursnummer}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{kurs : kurs}"> {kurs.title}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{kurs : kurs}"> {kurs.kursbeginn -> f:format.date()}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{kurs : kurs}"> {kurs.kursende -> f:format.date()}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{kurs : kurs}"> {kurs.registrierungsbeginn -> f:format.date()}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{kurs : kurs}"> {kurs.registrierungsende -> f:format.date()}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{kurs : kurs}"> {kurs.subtitle}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{kurs : kurs}"> {kurs.bodytext}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{kurs : kurs}"> {kurs.maxTeilnehmerAnzahl}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{kurs : kurs}"> {kurs.preis}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{kurs : kurs}"> {kurs.previewImage.originalResource.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{kurs : kurs}"> {kurs.files}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{kurs : kurs}"> {kurs.documents.originalResource.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{kurs : kurs}"> {kurs.kursBewertung}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{kurs : kurs}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{kurs : kurs}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Kurs</f:link.action>
+</f:section>

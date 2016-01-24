@@ -1,0 +1,51 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<h1>Listing for Theme</h1>
+
+<f:flashMessages renderMode="div" />
+
+<table  class="tx_woehrlforum" >
+	<tr>
+		<th><f:translate key="tx_woehrlforum_domain_model_theme.geschlossen" /></th>
+		<th><f:translate key="tx_woehrlforum_domain_model_theme.betreff" /></th>
+		<th><f:translate key="tx_woehrlforum_domain_model_theme.autor" /></th>
+		<th><f:translate key="tx_woehrlforum_domain_model_theme.erstellt" /></th>
+		<th><f:translate key="tx_woehrlforum_domain_model_theme.wieoftwurdedas_themaangesehen" /></th>
+		<th><f:translate key="tx_woehrlforum_domain_model_theme.anzahlder_anworten" /></th>
+		<th><f:translate key="tx_woehrlforum_domain_model_theme.erste_nachricht" /></th>
+		<th><f:translate key="tx_woehrlforum_domain_model_theme.letzter_nachricht" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{themes}" as="theme">
+		<tr>
+			<td><f:link.action action="show" arguments="{theme : theme}"> {theme.geschlossen}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{theme : theme}"> {theme.betreff}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{theme : theme}"> {theme.autor}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{theme : theme}"> {theme.erstellt -> f:format.date()}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{theme : theme}"> {theme.wieoftwurdedasThemaangesehen}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{theme : theme}"> {theme.anzahlderAnworten}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{theme : theme}"> {theme.ersteNachricht}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{theme : theme}"> {theme.letzterNachricht}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{theme : theme}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{theme : theme}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Theme</f:link.action>
+</f:section>

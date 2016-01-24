@@ -1,0 +1,50 @@
+
+plugin.tx_woehrlloginstatus {
+	view {
+		templateRootPath = {$plugin.tx_woehrlloginstatus.view.templateRootPath}
+		partialRootPath = {$plugin.tx_woehrlloginstatus.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_woehrlloginstatus.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_woehrlloginstatus.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+}
+page.includeCSS.woehrl_loginstatus1 = EXT:woehrl_loginstatus/Resources/Public/Css/glyphicons-free.css
+
+plugin.tx_woehrlloginstatus._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-woehrl-loginstatus table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-woehrl-loginstatus table th {
+		font-weight:bold;
+	}
+
+	.tx-woehrl-loginstatus table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)
